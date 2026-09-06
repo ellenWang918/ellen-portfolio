@@ -1,6 +1,6 @@
-# Ellen’s portfolio
+# Ellen's portfolio
 
-Minimal Next.js project using App Router, TypeScript, Tailwind CSS, and a local Alata font.
+Minimal Next.js portfolio using the App Router, TypeScript, Tailwind CSS, and a local Alata font.
 
 ## Local development
 
@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000. On Windows PowerShell, use `npm.cmd` if script execution is restricted.
 
 ## Checks
 
