@@ -1,0 +1,249 @@
+@import "tailwindcss";
+@import "@fontsource/alata/400.css";
+
+:root {
+  --background: #fdfcf8;
+  --foreground: #171717;
+  --heading: #000000;
+  --muted: #6b6b6b;
+  --surface: #ffffff;
+  --grid-dot: rgb(217 217 217 / 50%);
+
+  --space-icon: 0.5rem;
+  --space-control: 0.75rem;
+  --space-stack: 14px;
+  --space-gutter: 16px;
+  --space-offset: 1.5rem;
+  --space-focus-top: 1rem;
+  --space-header-top: 120px;
+  --space-logo-intro: 64px;
+  --space-section: 64px;
+  --space-footer-bottom: 72px;
+  --space-lamp-gap: 64px;
+  --space-social-gap: 16px;
+  --space-card-gap: 16px;
+  --space-grid-gap: 32px;
+  --space-experience-heading: 34px;
+  --content-width: 525px;
+  --icon-size: 1rem;
+  --social-icon-size: 25px;
+  --lamp-width: 90px;
+  --lamp-height: 216px;
+  --folder-width: 107.25px;
+  --folder-height: 84.445px;
+
+  --type-body: 16px;
+  --type-heading: 24px;
+  --type-folder: 13px;
+  --type-section: 16px;
+  --type-weight: 400;
+  --type-leading: normal;
+
+  /* Current components have square corners; no rounded style is introduced. */
+  --radius-default: 0px;
+  --grid-dot-radius: 1.25px;
+  --grid-step: 20px;
+  --focus-width: 2px;
+  --focus-offset: 4px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--heading);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --spacing-icon: var(--space-icon);
+  --spacing-control: var(--space-control);
+  --spacing-stack: var(--space-stack);
+  --spacing-gutter: var(--space-gutter);
+  --spacing-offset: var(--space-offset);
+  --spacing-focus-top: var(--space-focus-top);
+  --spacing-icon-size: var(--icon-size);
+  --spacing-social-gap: var(--space-social-gap);
+  --spacing-card-gap: var(--space-card-gap);
+  --spacing-grid-gap: var(--space-grid-gap);
+  --container-content: var(--content-width);
+  --spacing-social-icon: var(--social-icon-size);
+  --spacing-folder-width: var(--folder-width);
+  --spacing-folder-height: var(--folder-height);
+  --text-body: var(--type-body);
+  --text-heading: var(--type-heading);
+  --text-folder: var(--type-folder);
+  --leading-copy: var(--type-leading);
+  --font-weight-regular: var(--type-weight);
+  --font-portfolio: "Alata", Arial, Helvetica, sans-serif;
+  --radius-base: var(--radius-default);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  background-image: radial-gradient(
+    circle,
+    var(--grid-dot) var(--grid-dot-radius),
+    transparent var(--grid-dot-radius)
+  );
+  background-size: var(--grid-step) var(--grid-step);
+  color: var(--foreground);
+}
+
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-content {
+  flex: 1;
+}
+
+.hanging-lamp {
+  --lamp-anchor-x: 36px;
+  --lamp-anchor-y: 0px;
+  position: absolute;
+  top: 0;
+  left: calc(50% + (var(--content-width) / 2) + var(--space-lamp-gap));
+  width: var(--lamp-width);
+  height: var(--lamp-height);
+  transform-origin: var(--lamp-anchor-x) var(--lamp-anchor-y);
+}
+
+.site-header {
+  width: calc(100% - 2 * var(--space-gutter));
+  max-width: var(--content-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: var(--space-header-top);
+  padding-bottom: var(--space-logo-intro);
+}
+
+.experience-section {
+  margin-top: var(--space-section);
+  color: var(--muted);
+  font-family: "Alata", Arial, Helvetica, sans-serif;
+}
+
+.experience-section h2 {
+  margin: 0 0 var(--space-experience-heading);
+  font-size: var(--type-section);
+  font-weight: var(--type-weight);
+  line-height: var(--type-leading);
+}
+
+.hanging-lamp img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social-links__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-social-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer {
+  width: calc(100% - 2 * var(--space-gutter));
+  max-width: var(--content-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: var(--space-footer-bottom);
+  text-align: left;
+}
+
+.social-links__link {
+  display: inline-flex;
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.social-links__link:focus-visible {
+  border-radius: var(--radius-default);
+}
+
+.social-links__icon {
+  display: block;
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+a:focus-visible {
+  outline: var(--focus-width) solid currentColor;
+  outline-offset: var(--focus-offset);
+}
+
+.folder-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, var(--folder-width)));
+  gap: var(--space-grid-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.folder-card {
+  display: flex;
+  width: var(--folder-width);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-card-gap);
+  color: var(--muted);
+  text-align: center;
+  text-decoration: none;
+}
+
+.folder-card__image {
+  display: block;
+  width: var(--folder-width);
+  height: var(--folder-height);
+  object-fit: contain;
+}
+
+.folder-card__title {
+  font-size: var(--type-folder);
+  line-height: var(--type-leading);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --space-header-top: 80px;
+    --space-logo-intro: 48px;
+    --space-section: 48px;
+    --space-footer-bottom: 48px;
+  }
+
+  .hanging-lamp {
+    display: none;
+  }
+
+  .folder-card-grid {
+    grid-template-columns: repeat(2, minmax(0, var(--folder-width)));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 390px) {
+  :root {
+    --space-header-top: 64px;
+    --space-logo-intro: 40px;
+    --space-section: 48px;
+    --space-footer-bottom: 40px;
+    --type-heading: 22px;
+    --type-body: 15px;
+  }
+
+  .folder-card-grid {
+    gap: 16px;
+  }
+}
