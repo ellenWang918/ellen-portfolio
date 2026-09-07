@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { isSettled, MAX_ANGLE, stepPendulum, type PendulumState } from "./physics";
 
 type Point = { x: number; y: number; time: number };
-type PendantPointerEvent = React.PointerEvent<HTMLButtonElement>;
+type PendantPointerEvent = React.PointerEvent<HTMLAnchorElement>;
 
 const PIVOT_X = 36;
 const IDLE_AMPLITUDE = (1.5 * Math.PI) / 180;
@@ -32,7 +32,7 @@ function getAngularVelocity(samples: Point[], rect: DOMRect) {
 }
 
 export function usePendulum(reducedMotion: boolean) {
-  const surfaceRef = useRef<HTMLButtonElement>(null);
+  const surfaceRef = useRef<HTMLAnchorElement>(null);
   const bodyRef = useRef<HTMLImageElement>(null);
   const stateRef = useRef<PendulumState>({ angle: 0, angularVelocity: 0 });
   const frameRef = useRef<number | null>(null);
@@ -44,6 +44,7 @@ export function usePendulum(reducedMotion: boolean) {
   const grabOffsetRef = useRef(0);
   const lastPointerAngleRef = useRef(0);
   const continuousPointerAngleRef = useRef(0);
+  const didDragRef = useRef(false);
   const reducedMotionRef = useRef(reducedMotion);
   reducedMotionRef.current = reducedMotion;
 
@@ -94,6 +95,7 @@ export function usePendulum(reducedMotion: boolean) {
     event.currentTarget.setPointerCapture(event.pointerId);
     event.preventDefault();
     draggingRef.current = true;
+    didDragRef.current = false;
     idleStartedRef.current = null;
     stopAnimation();
 
@@ -115,6 +117,8 @@ export function usePendulum(reducedMotion: boolean) {
     }
 
     event.preventDefault();
+    const start = samplesRef.current[0];
+    if (start && Math.hypot(event.clientX - start.x, event.clientY - start.y) > 4) didDragRef.current = true;
     const samples = samplesRef.current;
     samples.push({ x: event.clientX, y: event.clientY, time: performance.now() });
     if (samples.length > 4) samples.shift();
@@ -147,5 +151,5 @@ export function usePendulum(reducedMotion: boolean) {
     return stopAnimation;
   }, [startAnimation, stopAnimation]);
 
-  return { surfaceRef, bodyRef, onPointerDown, onPointerMove, onPointerUp, onPointerLeave };
+  return { surfaceRef, bodyRef, didDragRef, onPointerDown, onPointerMove, onPointerUp, onPointerLeave };
 }

@@ -1,5 +1,6 @@
 .root { --pendant-pivot-x: 36px; --pendant-pivot-y: 0px; position: absolute; top: 0; left: calc(50% + (var(--content-width) / 2) + var(--space-lamp-gap)); width: var(--lamp-width); height: var(--lamp-height); margin: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; transform-origin: var(--pendant-pivot-x) var(--pendant-pivot-y); touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; }
 .root:active { cursor: grabbing; }
-.body { display: block; width: 100%; height: 100%; transform-origin: var(--pendant-pivot-x) var(--pendant-pivot-y); will-change: transform; pointer-events: none; }
+.body { position: relative; display: block; width: 100%; height: 100%; transform-origin: var(--pendant-pivot-x) var(--pendant-pivot-y); will-change: transform; pointer-events: none; }
+.on { left: 1.75px; scale: 1 1.08; transform-origin: var(--pendant-pivot-x) var(--pendant-pivot-y); }
 .root:focus-visible { outline: var(--focus-width) solid currentColor; outline-offset: var(--focus-offset); }
 @media (max-width: 767px) { .root { display: none; } }
