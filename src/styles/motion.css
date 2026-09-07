@@ -17,7 +17,6 @@
 
   --motion-distance-hover: 2px;
   --motion-distance-card-lift: 3px;
-  --motion-distance-tab-open: 3px;
   --motion-distance-enter: 8px;
   --motion-scale-hover: 1.01;
   --motion-scale-press: 0.99;
@@ -37,7 +36,6 @@
     --motion-duration-enter: 0ms;
     --motion-distance-hover: 0px;
     --motion-distance-card-lift: 0px;
-    --motion-distance-tab-open: 0px;
     --motion-distance-enter: 0px;
     --motion-scale-hover: 1;
     --motion-scale-press: 1;

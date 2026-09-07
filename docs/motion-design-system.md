@@ -28,7 +28,6 @@ The source of truth is `src/styles/motion.css`, imported by the global styleshee
 | Exit easing | `ease-exit` | cubic-bezier(0.4, 0, 1, 1) |
 | Maximum hover travel | `distance-hover` | 2px |
 | Folder card lift | `distance-card-lift` | 3px |
-| Folder tab opening travel | `distance-tab-open` | 3px |
 | Maximum entrance travel | `distance-enter` | 8px |
 | Hover scale | `scale-hover` | 1.01 |
 | Optional press scale | `scale-press` | 0.99 |
