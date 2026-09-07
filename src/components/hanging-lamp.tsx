@@ -1,9 +1,7 @@
-import Image from "next/image";
+import { Pendant, type PendantProps } from "./Pendant/Pendant";
 
-export function HangingLamp() {
-  return (
-    <div className="hanging-lamp" data-component="hanging-lamp" aria-hidden="true">
-      <Image src="/pendent_off.svg" alt="" width={90} height={216} priority />
-    </div>
-  );
-}
+export type PendentState = "off" | "on";
+export type PendentProps = PendantProps;
+
+export function HangingLamp(props: PendentProps = {}) { return <Pendant {...props} />; }
+export function Pendent(props: PendentProps = {}) { return <Pendant {...props} />; }

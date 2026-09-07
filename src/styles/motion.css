@@ -1,0 +1,48 @@
+/* Motion foundations only. No transitions, keyframes, or component bindings.
+   Usage and accessibility contract: docs/motion-design-system.md. */
+:root {
+  --pendent-glow-color: rgb(255 216 108 / 24%);
+  --pendent-ambient-color: rgb(255 216 108 / 8%);
+  --pendent-ambient-spread: 80px;
+
+  --motion-duration-press: 120ms;
+  --motion-duration-hover: 160ms;
+  --motion-duration-folder-card: 200ms;
+  --motion-duration-exit: 160ms;
+  --motion-duration-enter: 400ms;
+
+  --motion-ease-interaction: cubic-bezier(0.2, 0, 0.2, 1);
+  --motion-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --motion-distance-hover: 2px;
+  --motion-distance-card-lift: 3px;
+  --motion-distance-tab-open: 3px;
+  --motion-distance-enter: 8px;
+  --motion-scale-hover: 1.01;
+  --motion-scale-press: 0.99;
+  --motion-delay: 0ms;
+  --motion-stagger: 40ms;
+  --motion-stagger-max: 160ms;
+}
+
+/* Future consumers must use these semantic tokens and show their final state
+   immediately under reduced motion; do not rely on animation completion. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-press: 0ms;
+    --motion-duration-hover: 0ms;
+    --motion-duration-folder-card: 0ms;
+    --motion-duration-exit: 0ms;
+    --motion-duration-enter: 0ms;
+    --motion-distance-hover: 0px;
+    --motion-distance-card-lift: 0px;
+    --motion-distance-tab-open: 0px;
+    --motion-distance-enter: 0px;
+    --motion-scale-hover: 1;
+    --motion-scale-press: 1;
+    --motion-delay: 0ms;
+    --motion-stagger: 0ms;
+    --motion-stagger-max: 0ms;
+  }
+}

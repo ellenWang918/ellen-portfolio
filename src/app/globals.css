@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource/alata/400.css";
+@import "../styles/motion.css";
 
 :root {
   --background: #fdfcf8;
@@ -137,6 +138,42 @@ body {
   height: 100%;
 }
 
+.pendent {
+  /* Keep the hit area and visual art separate so future controls can be added
+     without changing the lamp's anchor or surrounding layout. */
+  pointer-events: none;
+}
+
+.pendent__hit-area {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pendent__ambient,
+.pendent__glow {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pendent__ambient {
+  inset: calc(var(--pendent-ambient-spread) * -1);
+  z-index: -1;
+  background: var(--pendent-ambient-color);
+}
+
+.pendent__glow {
+  inset: 30% 10% 0;
+  z-index: 0;
+  background: var(--pendent-glow-color);
+}
+
+.pendent__image {
+  object-fit: contain;
+}
+
 .social-links__list {
   display: flex;
   align-items: center;
@@ -199,8 +236,21 @@ a:focus-visible {
   align-items: center;
   gap: var(--space-card-gap);
   color: var(--muted);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
   text-align: center;
   text-decoration: none;
+  transition: transform var(--motion-duration-folder-card) var(--motion-ease-interaction);
+}
+
+.folder-card__art {
+  position: relative;
+  display: block;
+  width: var(--folder-width);
+  height: var(--folder-height);
+  flex: 0 0 auto;
 }
 
 .folder-card__image {
@@ -208,6 +258,52 @@ a:focus-visible {
   width: var(--folder-width);
   height: var(--folder-height);
   object-fit: contain;
+}
+
+.folder-card__tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44%;
+  height: 15%;
+  border-radius: 2px 2px 0 0;
+  background: #f6b71e;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0);
+  transition:
+    opacity var(--motion-duration-hover) var(--motion-ease-interaction),
+    transform var(--motion-duration-hover) var(--motion-ease-interaction);
+}
+
+@media (min-width: 768px) {
+  .folder-card {
+    cursor: pointer;
+  }
+
+  .folder-card:hover,
+  .folder-card:focus-visible {
+    transform: translateY(calc(var(--motion-distance-card-lift) * -1)) scale(var(--motion-scale-hover));
+  }
+
+  .folder-card:hover .folder-card__tab,
+  .folder-card:focus-visible .folder-card__tab {
+    opacity: 0.72;
+    transform: translateY(calc(var(--motion-distance-tab-open) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folder-card:hover,
+  .folder-card:focus-visible {
+    transform: none;
+  }
+
+  .folder-card__tab {
+    opacity: 0;
+    transform: none;
+    transition: none;
+  }
 }
 
 .folder-card__title {

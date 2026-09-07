@@ -20,3 +20,5 @@ npm run build
 ```
 
 The homepage component architecture is documented in [docs/homepage-architecture.md](docs/homepage-architecture.md).
+
+Motion tokens and future usage are documented in [docs/motion-design-system.md](docs/motion-design-system.md). Components remain static.

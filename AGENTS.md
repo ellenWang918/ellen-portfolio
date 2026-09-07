@@ -31,6 +31,7 @@ Build Ellen Wang's personal Product Designer portfolio.
 - Mobile responsiveness is required.
 - Accessibility is required.
 - Do not add animation until static layout is approved.
+- Figma link: https://www.figma.com/design/OQ6xCKMzTzbOkUQ1NR0dJK/Resume-Portfolio?node-id=126-45
 
 <!-- BEGIN:nextjs-agent-rules -->
 

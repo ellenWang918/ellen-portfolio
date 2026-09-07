@@ -10,7 +10,10 @@ export type FolderCardProps = {
 export function FolderCard({ title, href, ariaLabel }: FolderCardProps) {
   const content = (
     <>
-      <Image className="folder-card__image" src="/folderCard.svg" alt="" aria-hidden="true" width={108} height={85} />
+      <span className="folder-card__art" aria-hidden="true">
+        <Image className="folder-card__image" src="/folderCard.svg" alt="" aria-hidden="true" width={108} height={85} />
+        <span className="folder-card__tab" />
+      </span>
       <span className="folder-card__title">{title}</span>
     </>
   );
@@ -20,8 +23,8 @@ export function FolderCard({ title, href, ariaLabel }: FolderCardProps) {
       {content}
     </Link>
   ) : (
-    <div className="font-portfolio folder-card" aria-label={ariaLabel}>
+    <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title}>
       {content}
-    </div>
+    </button>
   );
 }
