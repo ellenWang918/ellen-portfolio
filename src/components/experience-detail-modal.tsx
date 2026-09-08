@@ -60,6 +60,7 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
   if (!project) return null;
   const closeModal = () => {
     document.body.style.overflow = previousOverflowRef.current || "auto";
+    window.setTimeout(() => { document.body.style.overflow = previousOverflowRef.current || "auto"; }, 0);
     onClose();
   };
   const sidebar = <nav className="experience-modal__project-nav" aria-label="Experience projects"><p>Projects</p><ul>{projects.map((item) => <li key={item.id}><button type="button" aria-current={item.id === project.id ? "page" : undefined} onClick={() => { setIsMenuOpen(false); onProjectSelect(item.id); }}>{item.title}</button></li>)}</ul></nav>;
