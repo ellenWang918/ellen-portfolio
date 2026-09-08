@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FolderCard } from "@/components/folder-card";
 import { ExperienceDetailModal } from "@/components/experience-detail-modal";
@@ -17,7 +17,16 @@ export function ExperienceSection({ projects }: ExperienceSectionProps) {
   const searchParams = useSearchParams();
   const selectedId = searchParams.get("project");
   const selected = selectedId ? projects.find((project) => project.id === selectedId) ?? null : null;
+  useEffect(() => {
+    if (!selectedId) {
+      document.body.style.overflow = "auto";
+      activeRef.current?.focus();
+    }
+  }, [selectedId]);
   const setSelectedId = (id: string | null) => {
+    if (!id) {
+      activeRef.current?.focus();
+    }
     const next = id ? `/?project=${encodeURIComponent(id)}` : "/";
     router.replace(next, { scroll: false });
   };
@@ -28,9 +37,9 @@ export function ExperienceSection({ projects }: ExperienceSectionProps) {
     >
       <h2 id="experience-heading">Experience</h2>
       <ul className="folder-card-grid">
-        {projects.map(({ id, title, shortTitle }) => (
+        {projects.map(({ id, folderTitle }) => (
           <li key={id}>
-            <FolderCard title={shortTitle ?? title} isActive={selectedId === id} onSelect={() => { activeRef.current = document.activeElement as HTMLElement; setSelectedId(id); }} />
+            <FolderCard title={folderTitle} isActive={selectedId === id} onSelect={() => { activeRef.current = document.activeElement as HTMLElement; setSelectedId(id); }} />
           </li>
         ))}
       </ul>
