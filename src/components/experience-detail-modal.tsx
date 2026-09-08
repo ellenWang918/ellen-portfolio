@@ -7,6 +7,7 @@ import { MetadataSection } from "@/components/experience/metadata-section";
 import { DesktopWindow } from "@/components/desktop-window";
 import { Tag } from "@/components/tag";
 import { ConfidentialNotice } from "@/components/confidential-notice";
+import { SidebarItem } from "@/components/sidebar-item";
 
 function ProjectHeader({ project, titleId }: { project: Project; titleId: string }) {
   return <header className="experience-modal__hero-section">
@@ -63,7 +64,14 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
     window.setTimeout(() => { document.body.style.overflow = previousOverflowRef.current || "auto"; }, 0);
     onClose();
   };
-  const sidebar = <nav className="experience-modal__project-nav" aria-label="Experience projects"><p>Projects</p><ul>{projects.map((item) => <li key={item.id}><button type="button" aria-current={item.id === project.id ? "page" : undefined} onClick={() => { setIsMenuOpen(false); onProjectSelect(item.id); }}>{item.title}</button></li>)}</ul></nav>;
+  const sidebarIcons: Record<string, string> = {
+    "design-system-palms": "/projects/design-system-icon.svg",
+    "rapid-discovery-ism": "/projects/rapid-discovery-icon.svg",
+    "feature-improvement-sps": "/projects/feature-improvement-icon.svg",
+    "customer-data-analysis-commercial": "/projects/customer-data-analysis-icon.svg",
+    "business-process-improvement-plm": "/projects/service-design-icon.svg",
+  };
+  const sidebar = <nav className="experience-modal__project-nav" aria-label="Experience projects"><p>Projects</p><ul>{projects.map((item) => <li key={item.id}><SidebarItem type="button" icon={sidebarIcons[item.id] ? <Image src={sidebarIcons[item.id]} alt="" width={20} height={20} /> : undefined} aria-current={item.id === project.id ? "page" : undefined} onClick={() => { setIsMenuOpen(false); onProjectSelect(item.id); }}>{item.folderTitle}</SidebarItem></li>)}</ul></nav>;
   return (
     <dialog
       ref={dialogRef}

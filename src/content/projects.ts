@@ -67,7 +67,7 @@ export const projects: readonly Project[] = [
   {
     id: "business-process-improvement-plm",
     title: "Service Design & Workflow Mapping",
-    folderTitle: "Business Process Improvement",
+    folderTitle: "Service Design",
     summary: "A mobile maintenance product that digitises field workflows and connects with enterprise systems.",
     tags: ["Service Design", "Workflow Mapping", "Research Synthesis"],
     metadata: [
@@ -85,7 +85,7 @@ export const projects: readonly Project[] = [
   {
     id: "rapid-discovery-ism",
     title: "Rapid Discovery & Prototyping",
-    folderTitle: "Rapid discovery",
+    folderTitle: "Rapid Discovery",
     summary: "A rapid discovery engagement focused on a complex operational scheduling experience.",
     tags: ["Rapid Discovery", "Prototyping", "Product Alignment"],
     metadata: [
@@ -103,7 +103,7 @@ export const projects: readonly Project[] = [
   {
     id: "customer-data-analysis-commercial",
     title: "Customer Data Analysis & Feasibility",
-    folderTitle: "Customer data analysis",
+    folderTitle: "Customer Analysis",
     summary: "A six-week feasibility study exploring a customer management and self-service portal.",
     tags: ["Customer Analysis", "Data Analysis", "Customer Segmentation"],
     metadata: [

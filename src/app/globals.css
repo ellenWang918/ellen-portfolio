@@ -560,12 +560,16 @@ a:focus-visible {
 .desktop-window__controls span:first-child { background: #e58d82; }
 .desktop-window__controls span:nth-child(2) { background: #e7c56b; }
 .desktop-window__controls span:nth-child(3) { background: #91bd88; }
-.desktop-window__body { position: relative; display: grid; grid-template-columns: 190px minmax(0, 1fr); height: calc(70vh - 44px); max-height: calc(70vh - 44px); overflow: hidden; }
-.desktop-window__sidebar { overflow-y: auto; padding: 28px 20px; background: #ebe9e2; }
+.desktop-window__body { position: relative; display: grid; grid-template-columns: 260px minmax(0, 1fr); height: calc(70vh - 44px); max-height: calc(70vh - 44px); overflow: hidden; }
+.desktop-window__sidebar { overflow-y: auto; padding: 24px 16px; background: #ebe9e2; }
 .desktop-window__sidebar nav > p { margin: 0 0 14px; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; opacity: .65; }
-.desktop-window__sidebar ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-.desktop-window__sidebar button { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; opacity: .65; }
-.desktop-window__sidebar button:hover, .desktop-window__sidebar button:focus-visible, .desktop-window__sidebar button[aria-current="page"] { opacity: 1; text-decoration: underline; }
+.desktop-window__sidebar ul { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.desktop-window__sidebar ul, .desktop-window__sidebar li { width: 100%; }
+.sidebar-item { display: flex; padding: 8px 12px; align-items: center; gap: 12px; align-self: stretch; width: 100%; border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; opacity: .65; }
+.sidebar-item:hover, .sidebar-item:focus-visible, .sidebar-item[aria-current="page"] { opacity: 1; }
+.sidebar-item:hover, .sidebar-item:focus-visible { background: #EAE5DC; }
+.sidebar-item[aria-current="page"] { background: #E6DFD2; }
+.sidebar-item__icon { display: inline-flex; width: 20px; height: 20px; flex: 0 0 20px; align-items: center; justify-content: center; }
 .desktop-window__content { position: relative; overflow-y: auto; padding: 48px; }
 .experience-modal h2 { margin: 0; color: #1A1A18; font-family: Alata, Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: 400; line-height: normal; }
 .experience-modal__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; padding: 0; list-style: none; }
