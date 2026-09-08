@@ -43,13 +43,8 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
     const initialFocusTarget = Array.from(dialog.querySelectorAll<HTMLElement>("button, a[href]"))
       .find((element) => element.getClientRects().length > 0);
     initialFocusTarget?.focus();
-    const keepFocusInside = (event: FocusEvent) => {
-      if (dialog.open && event.target instanceof Node && !dialog.contains(event.target)) initialFocusTarget?.focus();
-    };
-    document.addEventListener("focusin", keepFocusInside);
     document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener("focusin", keepFocusInside);
       dialog.close();
       document.body.style.overflow = previousOverflowRef.current || "auto";
       if (trigger?.isConnected) trigger.focus();
