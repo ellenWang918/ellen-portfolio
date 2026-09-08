@@ -1,6 +1,6 @@
-import Link from "next/link";
+"use client";
 
-export type FolderCardProps = { title: string; href?: string; ariaLabel?: string };
+export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: () => void; isActive?: boolean };
 
 function FolderCardArtwork() {
   return (
@@ -11,7 +11,7 @@ function FolderCardArtwork() {
   );
 }
 
-export function FolderCard({ title, href, ariaLabel }: FolderCardProps) {
+export function FolderCard({ title, ariaLabel, onSelect, isActive = false }: FolderCardProps) {
   const content = <><span className="folder-card__art"><FolderCardArtwork /></span><span className="folder-card__title">{title}</span></>;
-  return href ? <Link className="font-portfolio folder-card" href={href} aria-label={ariaLabel ?? title}>{content}</Link> : <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title}>{content}</button>;
+  return <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title} aria-haspopup="dialog" aria-expanded={isActive} onClick={onSelect}>{content}</button>;
 }

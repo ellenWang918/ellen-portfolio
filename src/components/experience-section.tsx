@@ -1,12 +1,26 @@
-import { FolderCard, type FolderCardProps } from "@/components/folder-card";
+"use client";
 
-export type ExperienceItem = FolderCardProps & { id: string };
+import { useRef } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { FolderCard } from "@/components/folder-card";
+import { ExperienceDetailModal } from "@/components/experience-detail-modal";
+import type { Project } from "@/content/projects";
 
 type ExperienceSectionProps = {
-  items: readonly ExperienceItem[];
+  projects: readonly Project[];
 };
 
-export function ExperienceSection({ items }: ExperienceSectionProps) {
+export function ExperienceSection({ projects }: ExperienceSectionProps) {
+  const activeRef = useRef<HTMLElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const selectedId = searchParams.get("project");
+  const selected = selectedId ? projects.find((project) => project.id === selectedId) ?? null : null;
+  const setSelectedId = (id: string | null) => {
+    const next = id ? `/?project=${encodeURIComponent(id)}` : "/";
+    router.replace(next, { scroll: false });
+  };
   return (
     <section
       aria-labelledby="experience-heading"
@@ -14,12 +28,13 @@ export function ExperienceSection({ items }: ExperienceSectionProps) {
     >
       <h2 id="experience-heading">Experience</h2>
       <ul className="folder-card-grid">
-        {items.map(({ id, ...folder }) => (
+        {projects.map(({ id, title, shortTitle }) => (
           <li key={id}>
-            <FolderCard {...folder} />
+            <FolderCard title={shortTitle ?? title} isActive={selectedId === id} onSelect={() => { activeRef.current = document.activeElement as HTMLElement; setSelectedId(id); }} />
           </li>
         ))}
       </ul>
+      <ExperienceDetailModal project={pathname === "/" ? selected : null} projects={projects} onProjectSelect={setSelectedId} onClose={() => setSelectedId(null)} returnFocusRef={activeRef} />
     </section>
   );
 }

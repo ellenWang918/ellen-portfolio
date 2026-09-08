@@ -1,4 +1,3 @@
-import type { ExperienceItem } from "@/components/experience-section";
 import type { SocialLink } from "@/components/social-links";
 
 // Content transcribed from Figma frame 307:576.
@@ -8,14 +7,6 @@ export const intro = {
     "A multidisciplinary designer with over two years of industry experience. I work with cross-functional teams to make sense of complex problems and turn ideas into thoughtful, practical solutions.",
   location: "Gold Coast, Australia",
 };
-
-export const experiences = [
-  { id: "design-system", title: "Design System" },
-  { id: "feature-improvement", title: "Feature Improvement" },
-  { id: "business-process-improvement", title: "Business Process Improvement" },
-  { id: "rapid-discovery", title: "Rapid discovery" },
-  { id: "customer-data-analysis", title: "Customer data analysis" },
-] satisfies ExperienceItem[];
 
 export const socialLinks = [
   { label: "LinkedIn", iconSrc: "/LinkedIn.svg", href: "https://www.linkedin.com/in/zi-wang-456923171/" },

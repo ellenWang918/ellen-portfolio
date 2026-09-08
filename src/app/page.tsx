@@ -1,14 +1,18 @@
 import { ExperienceSection } from "@/components/experience-section";
 import { HangingLamp } from "@/components/hanging-lamp";
 import { IntroSection } from "@/components/intro-section";
-import { experiences, intro } from "@/content/home";
+import { intro } from "@/content/home";
+import { projects } from "@/content/projects";
 
 export default function Home() {
   return (
     <main id="main-content">
       <HangingLamp />
       <IntroSection {...intro} />
-      <ExperienceSection items={experiences} />
+      <Suspense fallback={<section aria-label="Experience" className="experience-section" />}>
+        <ExperienceSection projects={projects} />
+      </Suspense>
     </main>
   );
 }
+import { Suspense } from "react";

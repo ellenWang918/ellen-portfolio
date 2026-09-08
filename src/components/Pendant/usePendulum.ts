@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { isSettled, MAX_ANGLE, stepPendulum, type PendulumState } from "./physics";
 
 type Point = { x: number; y: number; time: number };
-type PendantPointerEvent = React.PointerEvent<HTMLAnchorElement>;
+type PendantPointerEvent = React.PointerEvent<HTMLButtonElement>;
 
 const PIVOT_X = 36;
 const IDLE_AMPLITUDE = (1.5 * Math.PI) / 180;
@@ -32,7 +32,7 @@ function getAngularVelocity(samples: Point[], rect: DOMRect) {
 }
 
 export function usePendulum(reducedMotion: boolean) {
-  const surfaceRef = useRef<HTMLAnchorElement>(null);
+  const surfaceRef = useRef<HTMLButtonElement>(null);
   const bodyRef = useRef<HTMLImageElement>(null);
   const stateRef = useRef<PendulumState>({ angle: 0, angularVelocity: 0 });
   const frameRef = useRef<number | null>(null);
@@ -46,7 +46,9 @@ export function usePendulum(reducedMotion: boolean) {
   const continuousPointerAngleRef = useRef(0);
   const didDragRef = useRef(false);
   const reducedMotionRef = useRef(reducedMotion);
-  reducedMotionRef.current = reducedMotion;
+  useEffect(() => {
+    reducedMotionRef.current = reducedMotion;
+  }, [reducedMotion]);
 
   const render = useCallback(() => {
     if (bodyRef.current) bodyRef.current.style.transform = `rotate(${stateRef.current.angle}rad)`;
@@ -58,7 +60,7 @@ export function usePendulum(reducedMotion: boolean) {
     lastFrameRef.current = null;
   }, []);
 
-  const animate = useCallback((time: number) => {
+  const animate = useCallback(function tick(time: number) {
     if (draggingRef.current) return;
     const previousTime = lastFrameRef.current ?? time;
     const deltaSeconds = Math.min((time - previousTime) / 1000, 0.032);
@@ -77,7 +79,7 @@ export function usePendulum(reducedMotion: boolean) {
 
     render();
     if (!reducedMotionRef.current || Math.abs(stateRef.current.angle) > 0.001) {
-      frameRef.current = requestAnimationFrame(animate);
+      frameRef.current = requestAnimationFrame(tick);
     } else {
       stopAnimation();
     }
@@ -149,7 +151,7 @@ export function usePendulum(reducedMotion: boolean) {
   useEffect(() => {
     startAnimation();
     return stopAnimation;
-  }, [startAnimation, stopAnimation]);
+  }, [reducedMotion, startAnimation, stopAnimation]);
 
   return { surfaceRef, bodyRef, didDragRef, onPointerDown, onPointerMove, onPointerUp, onPointerLeave };
 }

@@ -31,10 +31,12 @@ and to the right of the column. LinkedIn, GitHub, and email icons sit below it.
 | HangingLamp | Noninteractive decorative mounting point |
 | SocialLinks | Named navigation with configurable labels and destinations |
 
-Content is centralized in src/content/home.ts. Missing destinations render plain
-text; no case-study routes, profile URLs, or email addresses are invented.
-All components remain Server Components. No state, client boundary, or new
-dependency is needed.
+Portfolio copy and project records are centralized in `src/content/home.ts` and
+`src/content/projects.ts`. Project records drive both homepage folders and the
+project sidebar. The homepage experience section is the client boundary because
+it owns URL-backed modal state; the surrounding route and content components stay
+server-rendered. Each project also has a canonical `/experience/[id]` page for
+sharing, refreshes, and search indexing.
 
 ## Deferred visual work
 
@@ -43,7 +45,6 @@ folder, lamp, location and social icons), dotted background, grid, spacing,
 typography, colors, and motion remain deferred. Export and use the original Figma
 assets during that pass rather than recreating the artwork.
 
-The scaffold uses natural document flow with no fixed canvas dimensions.
-Only a desktop frame was supplied; the final mobile arrangement still needs to be
-defined during the static layout pass. Keep the semantic reading order and ensure
-the decorative lamp never obscures content. Animation requires static-layout approval.
+The page uses natural document flow with responsive layouts. Keep the semantic
+reading order and ensure the decorative lamp never obscures content. Animation
+requires static-layout approval.
