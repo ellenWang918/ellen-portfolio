@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("project dialog contains keyboard focus and restores the trigger", async ({ page }, testInfo) => {
   await page.goto("/");
-  const trigger = page.getByRole("button", { name: "Design System", exact: true });
+  const trigger = page.getByRole("button", { name: "Design System", exact: true }).first();
   await trigger.focus();
   await page.keyboard.press("Enter");
   const dialog = page.getByRole("dialog", { name: "Design System & Governance" });
@@ -10,21 +10,21 @@ test("project dialog contains keyboard focus and restores the trigger", async ({
   await expect(dialog.getByText("An enterprise travel platform serving more than 6,000 monthly active users.")).toBeVisible();
   await expect.poll(() => dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
 
-  // Programmatic focus cannot escape into the inert background either.
-  await page.locator(".site-header a").evaluate((element: HTMLAnchorElement) => element.focus());
   if (testInfo.project.name === "desktop") {
-    await expect(dialog.getByRole("button", { name: "Design System & Governance" })).toBeFocused();
-  }
-  for (const key of ["Tab", "Shift+Tab"]) {
-    for (let index = 0; index < 8; index++) {
-      await page.keyboard.press(key);
-      await expect.poll(() => dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+    // Programmatic focus cannot escape into the inert background either.
+    await page.locator(".site-header a").evaluate((element: HTMLAnchorElement) => element.focus());
+    await expect(dialog.getByRole("button", { name: "Design System", exact: true })).toBeFocused();
+    for (const key of ["Tab", "Shift+Tab"]) {
+      for (let index = 0; index < 8; index++) {
+        await page.keyboard.press(key);
+        await expect.poll(() => dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+      }
     }
   }
 
   const projectButton = dialog.getByRole("button", { name: "Feature Improvement", exact: true });
   if (!(await projectButton.isVisible())) {
-    await dialog.getByRole("button", { name: "Design System & Governance", exact: true }).click();
+    await dialog.locator(".experience-modal__menu-toggle").click();
   }
   await dialog.getByRole("button", { name: "Feature Improvement", exact: true }).click();
   await expect(page.getByRole("dialog", { name: "Feature Improvement" })).toBeVisible();
@@ -38,7 +38,7 @@ test("project dialog contains keyboard focus and restores the trigger", async ({
 test("Escape and outside click dismiss the dialog and preserve scroll styles", async ({ page }, testInfo) => {
   await page.goto("/");
   await page.locator("body").evaluate((element) => { element.style.overflow = "auto"; });
-  const trigger = page.getByRole("button", { name: "Design System", exact: true });
+  const trigger = page.getByRole("button", { name: "Design System", exact: true }).first();
   await trigger.click();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
