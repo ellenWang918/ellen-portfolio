@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CustomCursor } from "@/components/custom-cursor";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         {children}
         <SiteFooter />
+        <CustomCursor />
       </body>
     </html>
   );

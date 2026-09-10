@@ -1,8 +1,5 @@
-import Image from "next/image";
-
 export type SocialLink = {
   label: string;
-  iconSrc: string;
   href?: string;
 };
 
@@ -14,21 +11,23 @@ export function SocialLinks({ links }: SocialLinksProps) {
   return (
     <nav className="social-links" aria-label="Social and contact links">
       <ul className="social-links__list">
-        {links.map(({ label, iconSrc, href }) => (
+        {links.map(({ label, href }) => (
           <li key={label}>
             {href ? (
               <a
                 className="social-links__link"
                 href={href}
                 aria-label={label}
+                data-cursor-no-label="true"
+                data-cursor-opacity="0.5"
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               >
-                <Image className="social-links__icon" src={iconSrc} alt="" aria-hidden="true" width={25} height={25} />
+                {label}
               </a>
             ) : (
-              <span className="social-links__link" role="img" aria-label={label}>
-                <Image className="social-links__icon" src={iconSrc} alt="" aria-hidden="true" width={25} height={25} />
+              <span className="social-links__link" role="img" aria-label={label} data-cursor-no-label="true">
+                {label}
               </span>
             )}
           </li>

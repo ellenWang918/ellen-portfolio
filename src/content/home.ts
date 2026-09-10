@@ -9,7 +9,7 @@ export const intro = {
 };
 
 export const socialLinks = [
-  { label: "LinkedIn", iconSrc: "/LinkedIn.svg", href: "https://www.linkedin.com/in/zi-wang-456923171/" },
-  { label: "GitHub", iconSrc: "/GitHub.svg", href: "https://github.com/ellenWang918" },
-  { label: "Email", iconSrc: "/email.svg", href: "mailto:ellenwang918@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/zi-wang-456923171/" },
+  { label: "GitHub", href: "https://github.com/ellenWang918" },
+  { label: "Email", href: "mailto:ellenwang918@gmail.com" },
 ] satisfies SocialLink[];

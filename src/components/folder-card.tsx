@@ -1,6 +1,9 @@
 "use client";
 
-export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: () => void; isActive?: boolean };
+import { useId } from "react";
+import { Tooltip } from "@/components/tooltip";
+
+export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: () => void; isActive?: boolean; tooltip?: string; cursorLabel?: string };
 
 function FolderCardArtwork() {
   return (
@@ -11,7 +14,9 @@ function FolderCardArtwork() {
   );
 }
 
-export function FolderCard({ title, ariaLabel, onSelect, isActive = false }: FolderCardProps) {
+export function FolderCard({ title, ariaLabel, onSelect, isActive = false, tooltip, cursorLabel }: FolderCardProps) {
+  const tooltipId = useId();
   const content = <><span className="folder-card__art"><FolderCardArtwork /></span><span className="folder-card__title">{title}</span></>;
-  return <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title} aria-haspopup="dialog" aria-expanded={isActive} onClick={onSelect}>{content}</button>;
+  const card = <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title} data-cursor-label={cursorLabel} aria-describedby={tooltip ? tooltipId : undefined} aria-haspopup={onSelect ? "dialog" : undefined} aria-expanded={onSelect ? isActive : undefined} onClick={onSelect}>{content}</button>;
+  return tooltip ? <Tooltip content={tooltip} id={tooltipId}>{card}</Tooltip> : card;
 }

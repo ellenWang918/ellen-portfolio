@@ -39,7 +39,7 @@ export function ExperienceSection({ projects }: ExperienceSectionProps) {
       <ul className="folder-card-grid">
         {projects.map(({ id, folderTitle }) => (
           <li key={id}>
-            <FolderCard title={folderTitle} isActive={selectedId === id} onSelect={() => { activeRef.current = document.activeElement as HTMLElement; setSelectedId(id); }} />
+            <FolderCard title={folderTitle} cursorLabel="↗ View" isActive={selectedId === id} onSelect={() => { activeRef.current = document.activeElement as HTMLElement; setSelectedId(id); }} />
           </li>
         ))}
       </ul>

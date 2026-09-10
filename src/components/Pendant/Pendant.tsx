@@ -22,7 +22,7 @@ export function Pendant({ isOn = false, label, id, className }: PendantProps = {
   const reducedMotion = usePrefersReducedMotion();
   const { surfaceRef, bodyRef, didDragRef, onPointerDown, onPointerMove, onPointerUp, onPointerLeave } = usePendulum(reducedMotion);
   const state = isOn ? "on" : "off";
-  return <button ref={surfaceRef} id={id} type="button" className={[styles.root, className].filter(Boolean).join(" ")} data-component="pendent" data-state={state} data-light-state={state} data-sound-target="pendent" data-parallax-target="pendent" aria-label={label ?? "Pendant light"} onClick={() => { didDragRef.current = false; }} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerLeave={onPointerLeave}>
+  return <button ref={surfaceRef} id={id} type="button" className={[styles.root, className].filter(Boolean).join(" ")} data-component="pendent" data-state={state} data-light-state={state} data-sound-target="pendent" data-parallax-target="pendent" data-cursor-type="grab" data-cursor-no-label="true" aria-label={label ?? "Pendant light"} onClick={() => { didDragRef.current = false; }} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerLeave={onPointerLeave}>
     <Image ref={bodyRef} className={[styles.body, isOn ? styles.on : ""].filter(Boolean).join(" ")} src={isOn ? "/pendent_on.svg" : "/pendent_off.svg"} alt="" width={90} height={216} priority draggable={false} />
   </button>;
 }
