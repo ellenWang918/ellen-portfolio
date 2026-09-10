@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="238" viewBox="0 0 960 238" fill="none">
+<title>Feature Improvement — editorial illustration</title>
+<desc>A hand uses a blue pencil to refine a product interface. Editable vector artwork in black, white and blue.</desc>
+<path id="background" fill="white" d="M0 0h960v238H0z"/>
+<g id="title" fill="#171717" font-family="Georgia, 'Times New Roman', serif" font-size="35" letter-spacing="-1">
+<text x="66" y="110">Feature</text><text x="66" y="151">Improvement</text>
+</g>
+<g stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g id="paper-interface" transform="rotate(-5 563 119)">
+<path d="M442 45 669 48 667 195 444 191Z" fill="#171717" stroke="none"/>
+<path d="M435 37Q551 34 662 40L661 184Q547 181 436 183Z" fill="white"/>
+<path d="M436 62 661 64"/>
+<circle cx="450" cy="50" r="2" fill="#171717" stroke="none"/><circle cx="460" cy="50" r="2" fill="#171717" stroke="none"/><circle cx="470" cy="50" r="2" fill="#171717" stroke="none"/>
+<path d="M455 85h62m-62 10h43"/>
+<path d="M455 119Q481 117 513 119L513 161 455 160Z" fill="#63A7F0" stroke="none"/>
+<path d="m467 140 9 8 22-22" stroke-width="3"/>
+<path d="M537 89h103M537 118h103M537 149h103"/>
+<rect x="556" y="81" width="13" height="16" rx="4" fill="white"/>
+<rect x="603" y="110" width="13" height="16" rx="4" fill="#63A7F0"/>
+<rect x="578" y="141" width="13" height="16" rx="4" fill="white"/>
+</g>
+<g id="revision-mark">
+<path d="M591 34c-8-16-26-20-46-13"/><path d="m550 14-8 9 13 3"/>
+<path d="m404 81 12 5m-5-23 9 10m-22 26 15-1"/>
+</g>
+<g id="drawing-hand">
+<path d="m837 197-45-27c-12-8-24-12-36-14l-37-7c-10-2-11-13-2-16l19 1-32-32c-7-8-1-17 7-12l20 17-8-16c-4-10 4-16 11-9l10 14c-4-12 5-17 12-8l10 14c0-11 9-13 15-5l22 30c10 14 12 27 23 35l31 18Z" fill="white"/>
+<path d="m731 107 22 22m-9-33 18 25m4-19 13 19M736 134c15 0 26 8 30 18"/>
+<path d="m827 160 42 25-16 30-44-27Z" fill="#63A7F0"/>
+<path d="m837 176 18 11m-23-3 18 11" stroke-width="1.2"/>
+</g>
+<g id="pencil">
+<path d="m648 142 76-100 15 11-76 101-22 13Z" fill="#63A7F0"/>
+<path d="m648 142 15 12-22 13Z" fill="white"/>
+<path d="m641 167 5-13 6 5Z" fill="#171717" stroke="none"/>
+<path d="m724 42 7-9q4-5 9-1l6 5q4 3 1 8l-8 8Z" fill="white"/>
+<path d="m655 145 76-99" stroke-width="1.2"/>
+</g>
+<g id="fingers-over-pencil"><path d="m723 124-19-22c-7-8-1-17 7-12l24 21" fill="white"/></g>
+<g id="ground-details"><path d="m489 208 95 1m174-169 5-11m7 17 12-4"/><path d="m616 205 8-2"/></g>
+</g>
+</svg>

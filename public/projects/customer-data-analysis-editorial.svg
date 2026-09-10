@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="238" viewBox="0 0 960 238" fill="none">
+<title>Customer Data Analysis — editorial illustration</title><desc>Customer profile cards feed a visual analysis sheet. A magnifying glass highlights a blue trend, connecting people to actionable insights.</desc>
+<path id="background" fill="white" d="M0 0h960v238H0z"/>
+<g id="title" fill="#171717" font-family="Georgia, 'Times New Roman', serif" font-size="35" letter-spacing="-1"><text x="66" y="110">Customer</text><text x="66" y="151">Data Analysis</text></g>
+<g stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g id="customer-cards" transform="rotate(-7 453 119)">
+<rect x="411" y="45" width="85" height="72" rx="6" fill="#171717"/>
+<rect x="406" y="40" width="85" height="72" rx="6" fill="white"/>
+<path d="M421 89c0-14 26-16 28 0" fill="#63A7F0" stroke="none"/>
+
+<path d="M426 63c-2 8 1 14 8 15s12-7 10-15Z" fill="white"/>
+<path d="M424 67c-6-13 9-23 18-14 5 2 5 8 2 13l-5-8c-4 5-9 4-15 4Z" fill="#171717"/>
+<path d="M459 62h19m-19 10h14m-55 25h60" stroke-width="1.4"/>
+<rect x="406" y="126" width="85" height="72" rx="6" fill="white"/>
+<path d="M420 175c2-16 27-17 29 0" fill="#63A7F0" stroke="none"/>
+<path d="M426 148c-3 9 1 15 8 16 7-1 11-8 8-15Z" fill="white"/>
+<path d="M424 153c-6-3-6-14 2-16 3-6 14-5 16 2 6 4 5 10 1 14l-3-9c-6 5-9 4-15 3Z" fill="#171717"/>
+<path d="M459 147h19m-19 10h14m-55 26h60" stroke-width="1.4"/>
+</g>
+<g id="analysis-sheet" transform="rotate(4 653 121)">
+<path d="M543 42h225v155H543Z" fill="#171717"/>
+<path d="M537 36h225v155H537Z" fill="white"/>
+<path d="M554 54h75m-75 9h46" stroke-width="1.5"/>
+<path d="M555 89v77h182"/>
+<path d="M570 146h18v20h-18Zm32-21h18v41h-18Zm32-28h18v69h-18Z" fill="#63A7F0" stroke="none"/>
+<path d="m568 121 36-21 33-18" stroke-dasharray="3 5"/>
+<path d="M553 177h53m18 0h23" stroke-width="1.4"/>
+</g>
+<g id="magnified-insight">
+<path d="m791 145 52 44q8 7 0 16-7 7-15 0l-50-47Z" fill="#171717"/>
+<path d="m790 148 12 11-14 15-13-12Z" fill="#63A7F0"/>
+<circle cx="752" cy="111" r="53" fill="white"/>
+<circle cx="752" cy="111" r="44" fill="white"/>
+<path d="m721 131 19-19 16 9 26-34v44Z" fill="#63A7F0" stroke="none"/>
+<path d="m721 131 19-19 16 9 26-34m-10 1 10-1 1 10"/>
+<path d="M721 140h61" stroke-width="1.4"/>
+</g>
+<g id="insight-details"><path d="m519 98 10 1m-12 48 12 1M811 62l11-7m-18-3 4-11M647 214h80m17 0h9"/></g>
+</g></svg>

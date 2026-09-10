@@ -30,7 +30,7 @@ export const projects: readonly Project[] = [
     folderTitle: "Design System",
     summary: "An enterprise travel platform serving more than 6,000 monthly active users.",
     hero: {
-      src: "/projects/design-system-hero.svg",
+      src: "/projects/design-system-editorial.svg",
       alt: "Design System project hero",
     },
     tags: ["Design System", "Governance", "Design Review"],
@@ -51,6 +51,10 @@ export const projects: readonly Project[] = [
     title: "Feature Improvement & MVP Validation",
     folderTitle: "Feature Improvement",
     summary: "An enterprise continuous-improvement platform used by operational teams across multiple sites.",
+    hero: {
+      src: "/projects/feature-improvement-editorial.svg",
+      alt: "Feature Improvement project hero",
+    },
     tags: ["User Research", "MVP Scoping", "Usability Testing"],
     metadata: [
       { label: "Company", value: "Rio Tinto" },
@@ -69,6 +73,10 @@ export const projects: readonly Project[] = [
     title: "Service Design & Workflow Mapping",
     folderTitle: "Service Design",
     summary: "A mobile maintenance product that digitises field workflows and connects with enterprise systems.",
+    hero: {
+      src: "/projects/service-design-editorial.svg",
+      alt: "Service Design project hero",
+    },
     tags: ["Service Design", "Workflow Mapping", "Research Synthesis"],
     metadata: [
       { label: "Company", value: "Rio Tinto" },
@@ -87,6 +95,10 @@ export const projects: readonly Project[] = [
     title: "Rapid Discovery & Prototyping",
     folderTitle: "Rapid Discovery",
     summary: "A rapid discovery engagement focused on a complex operational scheduling experience.",
+    hero: {
+      src: "/projects/rapid-design-editorial.svg",
+      alt: "Rapid Discovery project hero",
+    },
     tags: ["Rapid Discovery", "Prototyping", "Product Alignment"],
     metadata: [
       { label: "Company", value: "Rio Tinto" },
@@ -105,6 +117,10 @@ export const projects: readonly Project[] = [
     title: "Customer Data Analysis & Feasibility",
     folderTitle: "Customer Analysis",
     summary: "A six-week feasibility study exploring a customer management and self-service portal.",
+    hero: {
+      src: "/projects/customer-data-analysis-editorial.svg",
+      alt: "Customer Data Analysis project hero",
+    },
     tags: ["Customer Analysis", "Data Analysis", "Customer Segmentation"],
     metadata: [
       { label: "Company", value: "Rio Tinto" },

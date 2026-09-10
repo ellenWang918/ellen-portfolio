@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="238" viewBox="0 0 960 238" fill="none">
+<title>Design System — editorial illustration</title><desc>A hand places a blue component into a modular collection of typography, colour and interface elements. Black linework with editable blue vector shapes.</desc>
+<path id="background" fill="white" d="M0 0h960v238H0z"/>
+<g id="title" fill="#171717" font-family="Georgia, 'Times New Roman', serif" font-size="35" letter-spacing="-1"><text x="66" y="110">Design</text><text x="66" y="151">System</text></g>
+<g stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g id="component-board" transform="rotate(-4 569 121)">
+<path d="M438 48h232v148H438Z" fill="#171717" stroke="none"/>
+<path d="M431 40Q547 37 662 41L661 185 432 184Z" fill="white"/>
+<path d="M450 59h86m-86 9h52" stroke-width="1.5"/>
+<rect x="450" y="83" width="88" height="82" rx="5" fill="white"/>
+<g id="typography-sample" fill="#171717" stroke="none" font-family="Georgia, 'Times New Roman', serif"><text x="459" y="139" font-size="47">Aa</text></g>
+<rect x="551" y="83" width="91" height="34" rx="5" fill="#63A7F0"/>
+<path d="M565 100h61m-6-5 6 5-6 5"/>
+<rect x="551" y="130" width="41" height="35" rx="5" fill="#171717"/>
+<path d="m561 147 7 7 13-15" stroke="white"/>
+<rect x="602" y="130" width="40" height="35" rx="5" fill="white"/>
+<path d="M612 147h20m-10-10v20"/>
+</g>
+<g id="component-to-place" transform="rotate(11 713 74)">
+<rect x="677" y="40" width="65" height="65" rx="7" fill="#171717"/>
+<rect x="672" y="35" width="65" height="65" rx="7" fill="white"/>
+<circle cx="704" cy="67" r="20" fill="#63A7F0" stroke="none"/>
+</g>
+<g id="placing-hand">
+<path d="m855 168-32-27c-10-8-10-27-19-41l-20-28c-5-8-14-5-13 5l-9-13c-6-8-14-4-12 6l-9-10c-7-7-15-2-11 7l12 22-24-15c-10-6-16 2-8 9l34 31-18-3c-12-2-15 10-4 14l39 13c10 3 17 10 25 16l33 30Z" fill="white"/>
+<path d="m742 89 20 16m-12-35 18 26m3-19 12 20m-57 14c13 2 22 10 25 19"/>
+<path d="m827 144 38 28-22 30-37-30Z" fill="#63A7F0"/>
+<path d="m836 164 15 11m-20-4 15 11" stroke-width="1.2"/>
+</g>
+<g id="assembly-details"><path d="M686 116c-1 15-9 27-24 33m11-1-12 2 3-12"/><path d="m408 64-10-6m15-6-5-11M485 208h109m25-2 7-1"/></g>
+</g></svg>

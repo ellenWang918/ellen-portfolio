@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="238" viewBox="0 0 960 238" fill="none">
+<title>Rapid Design — editorial illustration</title><desc>Fast design exploration shown as a stack of sketches, a blue pencil and an analogue stopwatch. All elements are editable vectors.</desc>
+<path id="background" fill="white" d="M0 0h960v238H0z"/>
+<g id="title" fill="#171717" font-family="Georgia, 'Times New Roman', serif" font-size="35" letter-spacing="-1"><text x="66" y="110">Rapid</text><text x="66" y="151">Design</text></g>
+<g stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g id="sketch-stack">
+<path d="m442 74 153-29 26 148-151 25Z" fill="white"/>
+<path d="m451 55 163-10 8 151-162 10Z" fill="white"/>
+<path d="m473 42 172 14-13 149-172-14Z" fill="#171717"/>
+<path d="m466 35 172 14-13 149-172-14Z" fill="white"/>
+<path d="m480 55 55 5m-56 4 36 3" stroke-width="1.5"/>
+<path d="m478 81 138 11-5 55-138-11Z" fill="#63A7F0" stroke="none"/>
+<path d="m486 125 33-29 24 25 21-15 34 29m-96-32 9 1"/>
+<path d="m472 152 62 5m-63 5 43 4" stroke-width="1.5"/>
+<path d="m552 158 57 5-1 15-57-5Z" fill="#171717"/>
+</g>
+<g id="quick-pencil" transform="rotate(23 669 114)">
+<path d="M661 35h16v143l-8 22-8-22Z" fill="#63A7F0"/>
+<path d="M661 35v-8q0-5 5-5h6q5 0 5 5v8Z" fill="white"/>
+<path d="M661 178h16l-8 22Z" fill="white"/>
+<path d="m669 200-4-10h8Z" fill="#171717" stroke="none"/>
+<path d="M669 42v130" stroke-width="1.2"/>
+</g>
+<g id="stopwatch">
+<path d="m774 72 1-14h15l-1 15m-21-21 30 1-1 9-30-1Z" fill="#171717"/>
+<path d="m817 82 9-10 9 8-9 10" fill="white"/>
+<circle cx="780" cy="128" r="53" fill="#171717"/>
+<circle cx="775" cy="124" r="53" fill="white"/>
+<path d="M775 82a42 42 0 0 1 36 64l-36-22Z" fill="#63A7F0" stroke="none"/>
+<path d="M775 85v6m39 33h-6m-33 39v-6m-39-33h6m33 0 20-27"/>
+<circle cx="775" cy="124" r="4" fill="#171717"/>
+</g>
+<g id="speed-marks"><path d="m408 95 24-2m-34 17 32-2m-17 17 15-2M706 47l10-9m-2 23 14-3M731 196h95"/><path d="m575 214 28 2" stroke-width="1.5"/></g>
+</g></svg>
