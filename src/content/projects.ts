@@ -17,7 +17,10 @@ export type Project = {
     subcontent2?: string;
   };
   metadata: readonly ProjectMetadata[];
-  images?: readonly string[];
+  folderArtwork?: {
+    src: string;
+    alt: string;
+  };
   hero?: {
     src: string;
     alt: string;
@@ -32,6 +35,7 @@ export const projects: readonly Project[] = [
     id: "design-system-palms",
     title: "Design System & Governance",
     folderTitle: "Design System",
+    folderArtwork: { src: "/projects/design-system-drawing.svg", alt: "Design System drawing" },
     summary: "An enterprise travel platform serving more than 6,000 monthly active users.",
     hero: {
       src: "/projects/design-system-editorial.svg",
@@ -47,19 +51,14 @@ export const projects: readonly Project[] = [
       header: "Long story short",
       content:
         "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.\n\nI audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced. \n \n More details are coming soon.",
-      subheader: "The challenge",
-      subcontent:
-        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation. The product team needed a scalable design system to improve consistency, reduce rework and support future growth.",
-      subheader2: "The solution",
-      subcontent2:
-        "I audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced.",
-    },
+      },
     confidential: true,
   },
   {
     id: "feature-improvement-sps",
     title: "Feature Improvement & MVP Validation",
     folderTitle: "Feature Improvement",
+    folderArtwork: { src: "/projects/feature-improvement-drawing.svg", alt: "Feature Improvement drawing" },
     summary: "An enterprise continuous-improvement platform used by operational teams across multiple sites.",
     hero: {
       src: "/projects/feature-improvement-editorial.svg",
@@ -82,6 +81,7 @@ export const projects: readonly Project[] = [
     id: "business-process-improvement-plm",
     title: "Service Design & Workflow Mapping",
     folderTitle: "Service Design",
+    folderArtwork: { src: "/projects/service-design-drawing.svg", alt: "Service Design drawing" },
     summary: "A mobile maintenance product that digitises field workflows and connects with enterprise systems.",
     hero: {
       src: "/projects/service-design-editorial.svg",
@@ -104,6 +104,7 @@ export const projects: readonly Project[] = [
     id: "rapid-discovery-ism",
     title: "Rapid Discovery & Prototyping",
     folderTitle: "Rapid Discovery",
+    folderArtwork: { src: "/projects/rapid-discovery-drawing.svg", alt: "Rapid Discovery drawing" },
     summary: "A rapid discovery engagement focused on a complex operational scheduling experience.",
     hero: {
       src: "/projects/rapid-design-editorial.svg",
@@ -126,6 +127,7 @@ export const projects: readonly Project[] = [
     id: "customer-data-analysis-commercial",
     title: "Customer Data Analysis & Feasibility",
     folderTitle: "Customer Analysis",
+    folderArtwork: { src: "/projects/customer-data-analysis-drawing.svg", alt: "Customer Analysis drawing" },
     summary: "A six-week feasibility study exploring a customer management and self-service portal.",
     hero: {
       src: "/projects/customer-data-analysis-editorial.svg",

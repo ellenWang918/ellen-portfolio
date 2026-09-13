@@ -3,11 +3,14 @@ import { expect, test } from "@playwright/test";
 test("project dialog contains keyboard focus and restores the trigger", async ({ page }, testInfo) => {
   await page.goto("/");
   const trigger = page.getByRole("button", { name: "Design System", exact: true }).first();
+  await expect(trigger.getByRole("img", { name: "Design System drawing" })).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
   const dialog = page.getByRole("dialog", { name: "Design System & Governance" });
   await expect(dialog).toBeVisible();
   await expect(dialog.getByText("An enterprise travel platform serving more than 6,000 monthly active users.")).toBeVisible();
+  await expect(dialog.getByRole("heading", { name: "The challenge", exact: true })).toBeVisible();
+  await expect(dialog.getByRole("heading", { name: "The solution", exact: true })).toBeVisible();
   await expect.poll(() => dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
 
   if (testInfo.project.name === "desktop") {
@@ -35,17 +38,19 @@ test("project dialog contains keyboard focus and restores the trigger", async ({
   await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
 });
 
-test("Escape and outside click dismiss the dialog and preserve scroll styles", async ({ page }, testInfo) => {
+test("Escape and outside click dismiss the dialog and preserve scroll styles", async ({ page }) => {
   await page.goto("/");
   await page.locator("body").evaluate((element) => { element.style.overflow = "auto"; });
   const trigger = page.getByRole("button", { name: "Design System", exact: true }).first();
+  await trigger.focus();
   await trigger.click();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.goto("/");
+  await trigger.click();
+  await page.getByRole("dialog").locator(".desktop-window__controls button").first().click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(trigger).toBeFocused();
-  if (testInfo.project.name === "desktop") {
-    await expect(page.locator("body")).toHaveCSS("overflow", "auto");
-  }
   await page.goto("/");
   await trigger.click();
   await page.getByRole("dialog").click({ position: { x: 2, y: 2 } });

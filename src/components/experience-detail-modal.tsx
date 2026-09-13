@@ -5,25 +5,16 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { Project } from "@/content/projects";
 import { MetadataSection } from "@/components/experience/metadata-section";
 import { DesktopWindow } from "@/components/desktop-window";
-import { Tag } from "@/components/tag";
 import { ConfidentialNotice } from "@/components/confidential-notice";
 import { SidebarItem } from "@/components/sidebar-item";
+import { ProjectHero, ProjectStory, ProjectTags } from "@/components/project-presentation";
 
 function ProjectHeader({ project, titleId }: { project: Project; titleId: string }) {
   return <header className="experience-modal__hero-section">
-    {project.tags?.length ? <ul className="experience-modal__tags" aria-label="Project tags">{project.tags.map((tag) => <li key={tag}><Tag>{tag}</Tag></li>)}</ul> : null}
+    <ProjectTags project={project} />
     <h2 id={titleId}>{project.title}</h2>
     <p className="experience-modal__summary">{project.summary}</p>
   </header>;
-}
-
-function ProjectHero({ project }: { project: Project }) {
-  return project.hero ? <Image className="experience-modal__hero" src={project.hero.src} alt={project.hero.alt} width={960} height={238} /> : null;
-}
-
-function StorySection({ project }: { project: Project }) {
-  const { story } = project;
-  return <section className="experience-modal__story"><h3>{story.header}</h3><p>{story.content}</p></section>;
 }
 
 export function ExperienceDetailModal({ project, projects = [], onProjectSelect, onClose, returnFocusRef }: { project: Project | null; projects?: readonly Project[]; onProjectSelect: (id: string) => void; onClose: () => void; returnFocusRef: React.RefObject<HTMLElement | null> }) {
@@ -57,22 +48,13 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
   useEffect(() => {
     if (!isOpen) document.body.style.overflow = "auto";
   }, [isOpen]);
-  useEffect(() => {
-    if (isOpen) return;
-    const frame = window.requestAnimationFrame(() => {
-      if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus();
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, [isOpen, returnFocusRef]);
   if (!project) return null;
   const closeModal = () => {
-    const focusTarget = document.querySelector<HTMLElement>(`.folder-card[aria-label="${CSS.escape(project.folderTitle)}"]`);
+    dialogRef.current?.close();
+    returnFocusRef.current?.focus();
+    window.setTimeout(() => returnFocusRef.current?.focus(), 50);
     document.body.style.overflow = previousOverflowRef.current || "auto";
-    window.setTimeout(() => {
-      document.body.style.overflow = previousOverflowRef.current || "auto";
-      if (focusTarget?.isConnected) focusTarget.focus();
-      else if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus();
-    }, 150);
+    window.setTimeout(() => { document.body.style.overflow = previousOverflowRef.current || "auto"; }, 0);
     onClose();
   };
   const sidebarIcons: Record<string, string> = {
@@ -113,7 +95,7 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
           <div className="experience-modal__details">
             <ProjectHeader project={project} titleId={titleId} />
             <MetadataSection items={project.metadata} />
-            <StorySection project={project} />
+            <ProjectStory project={project} />
             {project.confidential ? <ConfidentialNotice /> : null}
           </div>
         </div>

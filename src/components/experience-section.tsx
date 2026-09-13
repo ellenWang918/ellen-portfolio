@@ -17,29 +17,37 @@ export function ExperienceSection({ projects }: ExperienceSectionProps) {
   const searchParams = useSearchParams();
   const selectedId = searchParams.get("project");
   const selected = selectedId ? projects.find((project) => project.id === selectedId) ?? null : null;
+
   useEffect(() => {
-    if (!selectedId) {
-      document.body.style.overflow = "auto";
-      activeRef.current?.focus();
-    }
+    if (selectedId) return;
+
+    document.body.style.overflow = "auto";
+    const frame = window.requestAnimationFrame(() => activeRef.current?.focus());
+
+    return () => window.cancelAnimationFrame(frame);
   }, [selectedId]);
+
   const setSelectedId = (id: string | null) => {
-    if (!id) {
-      activeRef.current?.focus();
-    }
-    const next = id ? `/?project=${encodeURIComponent(id)}` : "/";
-    router.replace(next, { scroll: false });
+    router.replace(id ? `/?project=${encodeURIComponent(id)}` : "/", { scroll: false });
   };
+
   return (
-    <section
-      aria-labelledby="experience-heading"
-      className="experience-section mx-auto flex w-[calc(100%_-_2_*_var(--space-gutter))] max-w-content flex-col items-start text-left"
-    >
+    <section aria-labelledby="experience-heading" className="experience-section mx-auto flex w-[calc(100%_-_2_*_var(--space-gutter))] max-w-content flex-col items-start text-left">
       <h2 id="experience-heading">Experience</h2>
       <ul className="folder-card-grid">
-        {projects.map(({ id, folderTitle }) => (
+        {projects.map(({ id, folderTitle, folderArtwork }) => (
           <li key={id}>
-            <FolderCard title={folderTitle} cursorLabel="↗ View" isActive={selectedId === id} onSelect={() => { activeRef.current = document.activeElement as HTMLElement; setSelectedId(id); }} />
+            <FolderCard
+              title={folderTitle}
+              cursorLabel="↗ View"
+              artworkSrc={folderArtwork?.src}
+              artworkAlt={folderArtwork?.alt}
+              isActive={selectedId === id}
+              onSelect={(event) => {
+                activeRef.current = event.currentTarget;
+                setSelectedId(id);
+              }}
+            />
           </li>
         ))}
       </ul>
