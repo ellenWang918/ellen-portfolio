@@ -11,6 +11,8 @@
   --muted: #6b6b6b;
   --secondary: #6E6A62;
   --surface: #ffffff;
+  --dark-surface: #212121;
+  --dark-ink: #1A1A18;
   --cursor-color: #F14141;
   --cursor-color-transparent: rgb(241 65 65 / 50%);
   --grid-dot: rgb(217 217 217 / 50%);
@@ -204,14 +206,15 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #212121;
+  background-color: var(--dark-surface);
   background-image: radial-gradient(circle, rgb(253 252 248 / 13%) 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 0 0;
+  color: var(--background);
 }
 
 body:has(.about-page) {
-  background-color: #212121;
+  background-color: var(--dark-surface);
   background-image: radial-gradient(circle, rgb(253 252 248 / 13%) 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 0 0;
@@ -223,7 +226,7 @@ body:has(.about-page) .site-header {
   top: 0;
   right: 0;
   left: 0;
-  color: #fdfcf8;
+  color: var(--background);
 }
 
 body:has(.about-page) .site-footer {
@@ -239,10 +242,6 @@ body:has(.about-page) .site-footer {
   cursor: pointer;
 }
 
-.about-page {
-  color: #fdfcf8;
-}
-
 .about-header {
   box-sizing: border-box;
   width: min(863px, calc(100% - 2 * var(--space-gutter)));
@@ -251,7 +250,6 @@ body:has(.about-page) .site-footer {
   padding-top: 243px;
 }
 
-.about-header__title,
 .about-header h1 {
   margin: 0;
   font-family: "Alata", Arial, Helvetica, sans-serif;
@@ -260,7 +258,6 @@ body:has(.about-page) .site-footer {
   line-height: normal;
 }
 
-.about-header__description,
 .about-header p {
   margin: 16px 0 0;
   font-family: "Alata", Arial, Helvetica, sans-serif;
@@ -297,8 +294,8 @@ body:has(.about-page) .site-footer {
   padding: 0 32px;
   max-width: 315px;
   border: 2px dashed #666666;
-  background: #212121;
-  color: #FDFCF8;
+  background: var(--dark-surface);
+  color: var(--background);
   text-align: center;
   font-family: "Alata", Arial, Helvetica, sans-serif;
   font-size: 24px;
@@ -340,7 +337,7 @@ body:has(.about-page) .site-footer {
 
 .about-page .facts li p {
   margin: 0;
-  color: #FDFCF8;
+  color: var(--background);
   font-family: "Alata", Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -520,7 +517,7 @@ body:has(.about-page) .site-footer {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  color: #6E6A62;
+  color: var(--secondary);
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   font-weight: 500;
@@ -645,11 +642,6 @@ a:focus-visible {
     transform: translateY(3px);
   }
 
-  .folder-card:hover .folder-card__front,
-  .folder-card:focus-visible .folder-card__front {
-    transform: translateY(3px);
-  }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -674,53 +666,6 @@ a:focus-visible {
 .folder-card__title {
   font-size: var(--type-folder);
   line-height: var(--type-leading);
-}
-
-.tooltip {
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tooltip__content {
-  position: absolute;
-  z-index: 2;
-  top: calc(100% + 8px);
-  left: 50%;
-  padding: 6px 10px;
-  border: 1px solid rgb(33 33 33 / 14%);
-  border-radius: 6px;
-  background: #fdfcf8;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-  color: var(--secondary, #6e6a62);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  line-height: 1.2;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -4px);
-  transition: opacity var(--motion-duration-folder-card) var(--motion-ease-interaction), transform var(--motion-duration-folder-card) var(--motion-ease-interaction);
-  white-space: nowrap;
-}
-
-.tooltip:hover .tooltip__content,
-.tooltip:focus-within .tooltip__content {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-.tooltip:hover .tooltip__content {
-  top: var(--tooltip-y);
-  left: var(--tooltip-x);
-  transform: translate(12px, 12px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tooltip__content {
-    transition: none;
-    transform: translate(-50%, 0);
-  }
 }
 
 .experience-modal { position: fixed; z-index: 30; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0; align-items: center; justify-content: center; gap: 24px; padding: 24px; background: transparent; color: inherit; }

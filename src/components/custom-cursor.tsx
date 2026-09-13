@@ -55,7 +55,6 @@ export function CustomCursor() {
       const isCompactTarget = Boolean(element.closest(COMPACT_INTERACTIVE));
       const text = isLabeledTarget
         ? element.getAttribute("data-cursor-label")
-          ?? element.closest(".tooltip")?.querySelector('[role="tooltip"]')?.textContent
           ?? element.getAttribute("aria-label") ?? element.textContent?.trim() ?? ""
         : "";
       const isGrabCursor = element.closest('[data-cursor-type="grab"]') !== null;
