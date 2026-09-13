@@ -44,9 +44,9 @@ export const projects: readonly Project[] = [
       { label: "Title", value: "Senior Analyst Product Designer" },
     ],
     story: {
-      header: "TL;DR",
+      header: "Long story short",
       content:
-        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.\n\nI audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced.",
+        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.\n\nI audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced. \n \n More details are coming soon.",
       subheader: "The challenge",
       subcontent:
         "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation. The product team needed a scalable design system to improve consistency, reduce rework and support future growth.",
@@ -74,7 +74,7 @@ export const projects: readonly Project[] = [
     story: {
       header: "Long story short",
       content:
-        "Users needed a clearer way to understand the status and deadlines of their action items. After observing that they already used Kanban-style spreadsheets, I translated this familiar behaviour into a feasible product concept and validated the scope with engineering. All participants understood the new experience without prompting during four usability sessions, and the feature was approved and released.",
+        "Users needed a clearer way to understand the status and deadlines of their action items. After observing that they already used Kanban-style spreadsheets, I translated this familiar behaviour into a feasible product concept and validated the scope with engineering. All participants understood the new experience without prompting during four usability sessions, and the feature was approved and released.\n \n More details are coming soon.",
     },
     confidential: true,
   },
@@ -96,7 +96,7 @@ export const projects: readonly Project[] = [
     story: {
       header: "Long story short",
       content:
-        "Maintenance checklist workflows varied significantly across user groups, operational processes and connected systems. I synthesised findings from 16 interviews across eight business groups into a layered service blueprint linking user journeys, system interactions, handoffs and pain points. The blueprint created a shared view of the service and supported customer prioritisation and the transition into requirements and product design.",
+        "Maintenance checklist workflows varied significantly across user groups, operational processes and connected systems. I synthesised findings from 16 interviews across eight business groups into a layered service blueprint linking user journeys, system interactions, handoffs and pain points. The blueprint created a shared view of the service and supported customer prioritisation and the transition into requirements and product design.\n \n More details are coming soon.",
     },
     confidential: true,
   },
@@ -118,7 +118,7 @@ export const projects: readonly Project[] = [
     story: {
       header: "Long story short",
       content:
-        "The initiative lacked a shared understanding of its terminology, workflows and system dependencies. I introduced a collaborative alignment canvas, owned the short-term workflow and translated 12 user stories into an interactive prototype. The concept was evaluated through three usability sessions and refined for engineering handover within a ten-week engagement.",
+        "The initiative lacked a shared understanding of its terminology, workflows and system dependencies. I introduced a collaborative alignment canvas, owned the short-term workflow and translated 12 user stories into an interactive prototype. The concept was evaluated through three usability sessions and refined for engineering handover within a ten-week engagement.\n \n More details are coming soon.",
     },
     confidential: true,
   },
@@ -140,7 +140,7 @@ export const projects: readonly Project[] = [
     story: {
       header: "Long story short",
       content:
-        "The proposed portal needed stronger evidence before the business could commit to a product direction. I cleaned and normalised 131 customer records, using descriptive statistics, segment comparisons and missing-data analysis to identify patterns and evidence gaps. The study gave stakeholders a clearer basis for feasibility discussions and defined the additional research needed for a confident decision.",
+        "The proposed portal needed stronger evidence before the business could commit to a product direction. I cleaned and normalised 131 customer records, using descriptive statistics, segment comparisons and missing-data analysis to identify patterns and evidence gaps. The study gave stakeholders a clearer basis for feasibility discussions and defined the additional research needed for a confident decision.\n \n More details are coming soon.",
     },
     confidential: true,
   },
