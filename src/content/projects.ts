@@ -11,6 +11,10 @@ export type Project = {
   story: {
     header: string;
     content: string;
+    subheader?: string;
+    subcontent?: string;
+    subheader2?: string;
+    subcontent2?: string;
   };
   metadata: readonly ProjectMetadata[];
   images?: readonly string[];
@@ -40,9 +44,15 @@ export const projects: readonly Project[] = [
       { label: "Title", value: "Senior Analyst Product Designer" },
     ],
     story: {
-      header: "Long story short",
+      header: "TL;DR",
       content:
         "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.\n\nI audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced.",
+      subheader: "The challenge",
+      subcontent:
+        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation. The product team needed a scalable design system to improve consistency, reduce rework and support future growth.",
+      subheader2: "The solution",
+      subcontent2:
+        "I audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced.",
     },
     confidential: true,
   },

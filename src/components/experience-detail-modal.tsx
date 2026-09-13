@@ -91,7 +91,7 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
       }}
       onClick={(event) => { if (event.target === event.currentTarget) closeModal(); }}
     >
-      <DesktopWindow title="~ellenwang/experience" sidebar={sidebar}>
+      <DesktopWindow title="~ellenwang/experience" sidebar={sidebar} onClose={closeModal}>
         <div className="experience-modal__content">
           <ProjectHero project={project} />
           <div className="experience-modal__details">

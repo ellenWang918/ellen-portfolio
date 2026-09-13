@@ -18,15 +18,13 @@ export function SocialLinks({ links }: SocialLinksProps) {
                 className="social-links__link"
                 href={href}
                 aria-label={label}
-                data-cursor-no-label="true"
-                data-cursor-opacity="0.5"
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               >
                 {label}
               </a>
             ) : (
-              <span className="social-links__link" role="img" aria-label={label} data-cursor-no-label="true">
+              <span className="social-links__link" role="img" aria-label={label}>
                 {label}
               </span>
             )}

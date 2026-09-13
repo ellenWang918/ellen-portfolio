@@ -11,6 +11,8 @@
   --muted: #6b6b6b;
   --secondary: #6E6A62;
   --surface: #ffffff;
+  --cursor-color: #F14141;
+  --cursor-color-transparent: rgb(241 65 65 / 50%);
   --grid-dot: rgb(217 217 217 / 50%);
   --portfolio-border-subtle: rgb(33 33 33 / 18%);
 
@@ -113,23 +115,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 999px;
-  background: #63A7F0;
+  background: var(--cursor-color);
   color: #fff;
   transform: translate(-50%, -50%) scale(1);
   transition: width 360ms cubic-bezier(.22, 1.18, .36, 1), height 360ms cubic-bezier(.22, 1.18, .36, 1), transform 160ms ease-out;
 }
 
 .custom-cursor[data-hover="true"] .custom-cursor__pill {
-  width: var(--cursor-width, 36px);
-  height: 36px;
+  width: var(--cursor-width, 28px);
+  height: 28px;
 }
 
 .custom-cursor[data-small="true"] .custom-cursor__pill {
   width: 20.4px;
   height: 20.4px;
+  background: var(--cursor-color-transparent);
 }
 
 .custom-cursor__email-icon {
@@ -534,12 +537,12 @@ body:has(.about-page) .site-footer {
 
 .social-links__link:hover,
 .social-links__link:focus-visible {
-  color: #63A7F0;
+  color: #F14141;
 }
 
 .experience-modal__confidential a:hover,
 .experience-modal__confidential a:focus-visible {
-  color: #63A7F0;
+  color: #F14141;
 }
 
 a:focus-visible {
@@ -588,13 +591,27 @@ a:focus-visible {
   overflow: visible;
 }
 
+.folder-card__drawing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  pointer-events: none;
+  transform: translate(-50%, -42%);
+}
+
 .folder-card__front {
+  fill: #6DD1FA;
   transform-box: fill-box;
   transform-origin: center bottom;
   transition: transform var(--motion-duration-folder-card) var(--motion-ease-interaction);
 }
 
 .folder-card__back {
+  fill: #399CD7;
   transform-box: fill-box;
   transform-origin: center top;
   transform: scaleY(1.06);
@@ -713,8 +730,9 @@ a:focus-visible {
 .desktop-window__titlebar { position: relative; display: flex; height: 44px; align-items: center; justify-content: center; border-bottom: 1px solid rgb(33 33 33 / 14%); background: #f4f2eb; }
 .experience-modal .desktop-window__titlebar h2 { margin: 0; color: #6B6B6B; text-align: center; font-family: "Alata", Arial, Helvetica, sans-serif; font-size: 13px; font-style: normal; font-weight: 400; line-height: normal; }
 .desktop-window__controls { position: absolute; top: 0; left: 16px; display: flex; height: 44px; align-items: center; gap: 7px; }
-.desktop-window__controls span { display: block; width: 10px; height: 10px; border: 1px solid rgb(33 33 33 / 18%); border-radius: 50%; background: #d8d5cc; }
-.desktop-window__controls span:first-child { background: #e58d82; }
+.desktop-window__controls button,
+.desktop-window__controls span { display: block; width: 10px; height: 10px; padding: 0; border: 1px solid rgb(33 33 33 / 18%); border-radius: 50%; background: #d8d5cc; }
+.desktop-window__controls button:first-child { background: #e58d82; }
 .desktop-window__controls span:nth-child(2) { background: #e7c56b; }
 .desktop-window__controls span:nth-child(3) { background: #91bd88; }
 .desktop-window__body { position: relative; display: grid; grid-template-columns: 260px minmax(0, 1fr); height: calc(70vh - 44px); max-height: calc(70vh - 44px); overflow: hidden; }

@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 
-const HOVER_SIZE = 36;
+const HOVER_SIZE = 28;
 const INTERACTIVE = "a, button, [data-cursor-hover], .folder-card";
+const LABELED_INTERACTIVE = ".folder-card";
+const COMPACT_INTERACTIVE = ".social-links__link, .experience-modal__confidential a";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -49,15 +51,16 @@ export function CustomCursor() {
         return;
       }
       const label = labelRef.current;
-      const text = element.getAttribute("data-cursor-label")
-        ?? element.closest(".tooltip")?.querySelector('[role="tooltip"]')?.textContent
-        ?? element.getAttribute("aria-label") ?? element.textContent?.trim() ?? "";
-      const isSmallSubject = Boolean(element.closest(".social-links__link, .experience-modal__confidential a"));
-      const suppressLabel = Boolean(element.closest("[data-cursor-no-label]"));
+      const isLabeledTarget = Boolean(element.closest(LABELED_INTERACTIVE));
+      const isCompactTarget = Boolean(element.closest(COMPACT_INTERACTIVE));
+      const text = isLabeledTarget
+        ? element.getAttribute("data-cursor-label")
+          ?? element.closest(".tooltip")?.querySelector('[role="tooltip"]')?.textContent
+          ?? element.getAttribute("aria-label") ?? element.textContent?.trim() ?? ""
+        : "";
       const isGrabCursor = element.closest('[data-cursor-type="grab"]') !== null;
-      const cursorOpacity = element.closest("[data-cursor-opacity]")?.getAttribute("data-cursor-opacity")
-        ?? (isSmallSubject ? "0.5" : "1");
-      cursor.dataset.small = isSmallSubject ? "true" : "false";
+      const cursorOpacity = "1";
+      cursor.dataset.small = isCompactTarget ? "true" : "false";
       cursor.dataset.grab = isGrabCursor ? "true" : "false";
       cursor.style.opacity = isGrabCursor ? "0" : cursorOpacity;
       if (element === hovered && label?.textContent === text) return;
@@ -65,11 +68,11 @@ export function CustomCursor() {
       if (label) {
         label.textContent = text;
         const isEmail = text.trim().toLowerCase() === "copy email";
-        cursor.dataset.email = !suppressLabel && isEmail ? "true" : "false";
+        cursor.dataset.email = isEmail ? "true" : "false";
         cursor.style.setProperty("--cursor-width", `${Math.max(HOVER_SIZE, Math.min(label.scrollWidth + (isEmail ? 24 : 0), 180) + 24)}px`);
       }
-      cursor.dataset.hover = suppressLabel ? "false" : "true";
-      cursor.dataset.text = suppressLabel ? "false" : "true";
+      cursor.dataset.hover = isLabeledTarget ? "true" : "false";
+      cursor.dataset.text = isLabeledTarget && text.length > 0 ? "true" : "false";
     };
 
     const updatePosition = () => {

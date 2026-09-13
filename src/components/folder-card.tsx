@@ -1,9 +1,8 @@
 "use client";
 
-import { useId } from "react";
-import { Tooltip } from "@/components/tooltip";
+import Image from "next/image";
 
-export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: () => void; isActive?: boolean; tooltip?: string; cursorLabel?: string };
+export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: () => void; isActive?: boolean; cursorLabel?: string; artworkSrc?: string; artworkAlt?: string };
 
 function FolderCardArtwork() {
   return (
@@ -14,9 +13,8 @@ function FolderCardArtwork() {
   );
 }
 
-export function FolderCard({ title, ariaLabel, onSelect, isActive = false, tooltip, cursorLabel }: FolderCardProps) {
-  const tooltipId = useId();
-  const content = <><span className="folder-card__art"><FolderCardArtwork /></span><span className="folder-card__title">{title}</span></>;
-  const card = <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title} data-cursor-label={cursorLabel} aria-describedby={tooltip ? tooltipId : undefined} aria-haspopup={onSelect ? "dialog" : undefined} aria-expanded={onSelect ? isActive : undefined} onClick={onSelect}>{content}</button>;
-  return tooltip ? <Tooltip content={tooltip} id={tooltipId}>{card}</Tooltip> : card;
+export function FolderCard({ title, ariaLabel, onSelect, isActive = false, cursorLabel, artworkSrc, artworkAlt }: FolderCardProps) {
+  const resolvedArtworkSrc = artworkSrc ?? (title === "Customer Analysis" ? "/projects/customer-data-analysis-drawing.svg" : title === "Design System" ? "/projects/design-system-drawing.svg" : title === "Feature Improvement" ? "/projects/feature-improvement-drawing.svg" : title === "Service Design" ? "/projects/service-design-drawing.svg" : title === "Rapid Discovery" ? "/projects/rapid-discovery-drawing.svg" : undefined);
+  const content = <><span className="folder-card__art"><FolderCardArtwork />{resolvedArtworkSrc ? <Image className="folder-card__drawing" src={resolvedArtworkSrc} alt={artworkAlt ?? `${title} drawing`} width={44} height={44} draggable={false} /> : null}</span><span className="folder-card__title">{title}</span></>;
+  return <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title} data-cursor-label={cursorLabel} aria-haspopup={onSelect ? "dialog" : undefined} aria-expanded={onSelect ? isActive : undefined} onClick={onSelect}>{content}</button>;
 }
