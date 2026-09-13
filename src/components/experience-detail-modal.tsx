@@ -40,8 +40,12 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
     const previousOverflow = document.body.style.overflow;
     previousOverflowRef.current = previousOverflow;
     dialog.showModal();
-    const initialFocusTarget = Array.from(dialog.querySelectorAll<HTMLElement>("button, a[href]"))
-      .find((element) => element.getClientRects().length > 0);
+    const focusCandidates = [
+      ...Array.from(dialog.querySelectorAll<HTMLElement>(".desktop-window__sidebar button")),
+      ...Array.from(dialog.querySelectorAll<HTMLElement>(".experience-modal__menu-toggle")),
+      ...Array.from(dialog.querySelectorAll<HTMLElement>(".desktop-window__controls button, a[href], button")),
+    ];
+    const initialFocusTarget = focusCandidates.find((element) => element.getClientRects().length > 0);
     initialFocusTarget?.focus();
     document.body.style.overflow = "hidden";
     return () => {
@@ -53,10 +57,22 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
   useEffect(() => {
     if (!isOpen) document.body.style.overflow = "auto";
   }, [isOpen]);
+  useEffect(() => {
+    if (isOpen) return;
+    const frame = window.requestAnimationFrame(() => {
+      if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus();
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [isOpen, returnFocusRef]);
   if (!project) return null;
   const closeModal = () => {
+    const focusTarget = document.querySelector<HTMLElement>(`.folder-card[aria-label="${CSS.escape(project.folderTitle)}"]`);
     document.body.style.overflow = previousOverflowRef.current || "auto";
-    window.setTimeout(() => { document.body.style.overflow = previousOverflowRef.current || "auto"; }, 0);
+    window.setTimeout(() => {
+      document.body.style.overflow = previousOverflowRef.current || "auto";
+      if (focusTarget?.isConnected) focusTarget.focus();
+      else if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus();
+    }, 150);
     onClose();
   };
   const sidebarIcons: Record<string, string> = {

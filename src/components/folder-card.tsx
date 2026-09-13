@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import type { MouseEvent } from "react";
 
-export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: () => void; isActive?: boolean; cursorLabel?: string; artworkSrc?: string; artworkAlt?: string };
+export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: (event: MouseEvent<HTMLButtonElement>) => void; isActive?: boolean; cursorLabel?: string; artworkSrc?: string; artworkAlt?: string };
 
 function FolderCardArtwork() {
   return (
