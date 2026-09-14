@@ -8,8 +8,7 @@ test("project dialog contains keyboard focus and restores the trigger", async ({
   const dialog = page.getByRole("dialog", { name: "Design System & Governance" });
   await expect(dialog).toBeVisible();
   await expect(dialog.getByText("An enterprise travel platform serving more than 6,000 monthly active users.")).toBeVisible();
-  await expect(dialog.getByRole("heading", { name: "The challenge", exact: true })).toBeVisible();
-  await expect(dialog.getByRole("heading", { name: "The solution", exact: true })).toBeVisible();
+  await expect(dialog.getByRole("heading", { name: "Long story short", exact: true })).toBeVisible();
   await expect.poll(() => dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
 
   if (testInfo.project.name === "desktop") {
