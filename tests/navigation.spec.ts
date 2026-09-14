@@ -3,7 +3,6 @@ import { expect, test } from "@playwright/test";
 test("project dialog contains keyboard focus and restores the trigger", async ({ page }, testInfo) => {
   await page.goto("/");
   const trigger = page.getByRole("button", { name: "Design System", exact: true }).first();
-  await expect(trigger.getByRole("img", { name: "Design System drawing" })).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
   const dialog = page.getByRole("dialog", { name: "Design System & Governance" });

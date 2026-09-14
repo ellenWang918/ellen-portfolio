@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import type { MouseEventHandler } from "react";
 
 export type FolderCardProps = { title: string; ariaLabel?: string; onSelect?: MouseEventHandler<HTMLButtonElement>; isActive?: boolean; cursorLabel?: string; artworkSrc?: string; artworkAlt?: string };
@@ -15,6 +14,8 @@ function FolderCardArtwork() {
 }
 
 export function FolderCard({ title, ariaLabel, onSelect, isActive = false, cursorLabel, artworkSrc, artworkAlt }: FolderCardProps) {
-  const content = <><span className="folder-card__art"><FolderCardArtwork />{artworkSrc ? <Image className="folder-card__drawing" src={artworkSrc} alt={artworkAlt ?? `${title} drawing`} width={44} height={44} draggable={false} /> : null}</span><span className="folder-card__title">{title}</span></>;
+  void artworkSrc;
+  void artworkAlt;
+  const content = <><span className="folder-card__art"><FolderCardArtwork /></span><span className="folder-card__title">{title}</span></>;
   return <button className="font-portfolio folder-card" type="button" aria-label={ariaLabel ?? title} data-cursor-label={cursorLabel} aria-haspopup={onSelect ? "dialog" : undefined} aria-expanded={onSelect ? isActive : undefined} onClick={onSelect}>{content}</button>;
 }
