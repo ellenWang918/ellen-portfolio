@@ -48,12 +48,9 @@ export const projects: readonly Project[] = [
       { label: "Title", value: "Senior Analyst Product Designer" },
     ],
     story: {
-      header: "The challenge",
+      header: "Long story short",
       content:
-        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.",
-      subheader: "The solution",
-      subcontent:
-        "I audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced.\n\nMore details are coming soon.",
+        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation. \n \n I audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the whole team, with no further implementation misalignment observed after the review process was introduced.\n\nMore details are coming soon.",
     },
     confidential: true,
   },
@@ -122,7 +119,7 @@ export const projects: readonly Project[] = [
     story: {
       header: "Long story short",
       content:
-        "The initiative lacked a shared understanding of its terminology, workflows and system dependencies. I introduced a collaborative alignment canvas, owned the short-term workflow and translated 12 user stories into an interactive prototype. The concept was evaluated through three usability sessions and refined for engineering handover within a ten-week engagement.\n \n More details are coming soon.",
+        "Planning information moved across multiple systems, while changing priorities required users to manually rebuild schedules. Because the specialised domain, terminology and dependencies were unfamiliar to the project team, I introduced a collaborative alignment canvas to create a shared understanding of the problem. I then owned the short-term workflow and translated 12 user stories into an interactive prototype, which was refined through three usability sessions and prepared for engineering handover. \n \n More details are coming soon.",
     },
     confidential: true,
   },
