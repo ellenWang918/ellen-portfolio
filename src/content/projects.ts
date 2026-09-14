@@ -48,10 +48,13 @@ export const projects: readonly Project[] = [
       { label: "Title", value: "Senior Analyst Product Designer" },
     ],
     story: {
-      header: "Long story short",
+      header: "The challenge",
       content:
-        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.\n\nI audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced. \n \n More details are coming soon.",
-      },
+        "The internal enterprise travel platform had accumulated inconsistent UI patterns, fragmented design files and recurring gaps between design and implementation.",
+      subheader: "The solution",
+      subcontent:
+        "I audited the product ecosystem, rebuilt 25+ reusable components and introduced shared documentation and design-review governance. The updated system achieved full adoption within the design team, with no further implementation misalignment observed after the review process was introduced.\n\nMore details are coming soon.",
+    },
     confidential: true,
   },
   {
