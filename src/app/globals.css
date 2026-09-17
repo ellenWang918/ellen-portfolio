@@ -708,7 +708,13 @@ a:focus-visible {
 .experience-modal__metadata dt { color: var(--secondary, #6E6A62); font-family: Alata, Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: 150%; }
 .experience-modal__metadata dd { margin: 0; color: var(--secondary, #6E6A62); font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: 150%; }
 .experience-modal h3 { margin: 0 0 8px; font-size: 20px; }
-.experience-modal__story p { margin: 0; color: #6E6A62; font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; line-height: 150%; white-space: pre-line; }
+.experience-modal__story p, .experience-modal__story li { margin: 0; color: #6E6A62; font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; line-height: 150%; white-space: pre-line; }
+.experience-modal__story section + section { margin-top: 32px; }
+.experience-modal__story section > p + p { margin-top: 16px; }
+.experience-modal__story ul, .experience-modal__story ol { margin: 16px 0; padding-left: 24px; }
+.experience-modal__story ul { list-style: disc; }
+.experience-modal__story ol { list-style: decimal; }
+.experience-modal__story li + li { margin-top: 8px; }
 .experience-modal__confidential { display: flex; margin-top: 32px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding: 16px 24px; justify-content: flex-start; align-items: center; gap: 10px; align-self: stretch; background: #F2F2F2; color: #000; font-family: Alata, Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: 150%; text-align: left; }
 .experience-modal__confidential a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 @media (min-width: 768px) and (max-width: 1599px) { .desktop-window { width: 70vw; } }
