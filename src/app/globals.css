@@ -160,7 +160,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font: 500 14px/1.2 "IBM Plex Mono", monospace;
+  font: 500 14px/1.2 "IBM Plex Sans", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   opacity: 0;
   transform: translateY(4px);
@@ -518,7 +518,7 @@ body:has(.about-page) .site-footer {
   align-items: center;
   justify-content: center;
   color: var(--secondary);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
