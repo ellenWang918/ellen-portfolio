@@ -4,7 +4,7 @@ import type { SocialLink } from "@/components/social-links";
 export const intro = {
   heading: "Hi, I’m Ellen Wang,",
   description:
-    "A multidisciplinary designer with over two years of industry experience. I work with cross-functional teams to make sense of complex problems and turn ideas into thoughtful, practical solutions.",
+    "Product designer with a technical background, specialising in complex digital products. I work across research, product strategy, interaction design and design systems to turn complex workflows into scalable experiences that users and engineering teams can understand.",
   location: "Gold Coast, Australia",
 };
 
