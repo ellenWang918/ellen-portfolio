@@ -99,8 +99,10 @@ export function ExperienceDetailModal({ project, projects = [], onProjectSelect,
             {project.confidential ? <ConfidentialNotice /> : null}
           </div>
         </div>
-        <button className="experience-modal__menu-toggle" type="button" aria-label={project.title} aria-expanded={isMenuOpen} aria-controls="experience-project-menu" onClick={() => setIsMenuOpen((open) => !open)}>
-          {isMenuOpen ? "Close projects" : project.title}
+        <button className="experience-modal__menu-toggle" type="button" aria-label={isMenuOpen ? "Close project menu" : "Open project menu"} aria-expanded={isMenuOpen} aria-controls="experience-project-menu" onClick={() => setIsMenuOpen((open) => !open)}>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            {isMenuOpen ? <path d="m6 6 12 12M18 6 6 18" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
+          </svg>
         </button>
       </DesktopWindow>
     </dialog>

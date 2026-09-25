@@ -30,6 +30,16 @@ export function ProjectStory({ project }: { project: Project }) {
         }
         return <p key={index}><StoryText text={block} /></p>;
       })}
+      {project.id === "design-system-palms" && header === "Outcome" && <div className="experience-modal__outcome-gallery">
+        <figure>
+          <Image src="/projects/design-system-01.png" alt="Design system foundations showing colour, typography and component states" width={1600} height={1000} sizes="(max-width: 767px) 100vw, 50vw" />
+          <figcaption>Stylstic Elements</figcaption>
+        </figure>
+        <figure>
+          <Image src="/projects/design-system-02.png" alt="Design system documentation showing checkbox guidance and usage examples" width={1600} height={1000} sizes="(max-width: 767px) 100vw, 50vw" />
+          <figcaption>The Documentation</figcaption>
+        </figure>
+      </div>}
     </section>)}
   </div>;
 }

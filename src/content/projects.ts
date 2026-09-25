@@ -54,7 +54,7 @@ export const projects: readonly Project[] = [
       },
       {
         "header": "My approach",
-        "content": "I treated the issue as a connected system of components, people and delivery practices.\n\n1. **Audit the ecosystem** - Compared the live product, existing design system and designers' working files to identify component, typography, interaction and implementation mismatches.\n2. **Create one shared structure** - Defined the design-system architecture and rules for contribution, including checking the library before creating a component and communicating every shared update.\n3. **Rebuild for reuse** - Applied atomic-design principles to restructure components and replace duplicated variants with manageable properties.\n4. **Document decisions** - Created practical guidance informed by mature public design systems, including behaviour, content, accessibility and responsive use.\n5. **Improve findability** - Built a guided page library containing the current approved designs.\n6. **Close the delivery loop** - Worked with the delivery lead to add design review to every front-end user story. A front-end change could not be completed until the designer had reviewed and approved it."
+        "content": "I treated the issue as a connected system of components, people and delivery practices.\n\n1. **Audit the ecosystem** - Compared the live product, existing design system and designers' working files to identify component, typography, interaction and implementation mismatches.\n2. **Create one shared structure** - Defined the design-system architecture and rules for contribution, including checking the library before creating a component and communicating every shared update.\n3. **Rebuild for reuse** - Applied atomic-design principles to restructure components and replace duplicated variants with manageable properties.\n4. **Document decisions** - Created practical guidance informed by mature public design systems, including behaviour, content and accessibility.\n5. **Improve findability** - Built a guided page library containing the current approved designs.\n6. **Close the delivery loop** - Worked with the scrum master to add design review to every front-end user story. Any user faced screen could not be completed until the designer had reviewed and approved it."
       },
       {
         "header": "Outcome",
@@ -62,8 +62,8 @@ export const projects: readonly Project[] = [
       },
       {
         "header": "Reflection",
-        "content": "The most important insight was that a design system is not only a Figma library. Consistency depends on shared rules, discoverable documentation and a delivery process that verifies the built experience."
-      }
+        "content": "The work established a governance model around the design system, connecting reusable components and discoverable guidance to a required design review. This made consistency part of the delivery process instead of relying on individual designers to catch discrepancies."
+      },
     ],
     confidential: true,
   },
