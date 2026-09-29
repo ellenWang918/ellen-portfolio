@@ -715,11 +715,20 @@ a:focus-visible {
 .experience-modal__story ul { list-style: disc; }
 .experience-modal__story ol { list-style: decimal; }
 .experience-modal__story li + li { margin-top: 8px; }
+.experience-modal__challenge > ul { margin-bottom: 0; }
+.experience-modal__challenge-image { display: block; width: 100%; height: auto; margin-top: 12px; }
+.experience-modal__outcome-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.experience-modal__outcome-cards article { display: flex; min-width: 0; flex-direction: column; gap: 4px; padding: 16px; background: #F2F2F2; }
+.experience-modal__outcome-cards h4 { margin: 0; color: #6E6A62; font-family: "IBM Plex Serif", Georgia, serif; font-size: 16px; font-style: normal; font-weight: 700; line-height: 150%; }
+.experience-modal__outcome-cards p { margin: 0; color: #6E6A62; font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: 150%; }
+.experience-modal__problem-statement > p { display: flex; align-items: flex-start; align-self: stretch; box-sizing: border-box; margin: 0; padding: 32px; gap: 10px; background: #F2F2F2; color: #1A1A18; text-align: center; font-family: Alata, Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; line-height: 150%; }
+.experience-modal__learning-extra { margin-top: 16px; }
 .experience-modal__outcome-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
 .experience-modal__outcome-gallery figure { min-width: 0; margin: 0; }
 .experience-modal__outcome-gallery img { display: block; width: 100%; height: auto; border-radius: 8px; }
 .experience-modal__outcome-gallery figcaption { margin-top: 8px; color: #6E6A62; font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; font-size: 14px; line-height: 150%; text-align: center; }
 @media (max-width: 767px) { .experience-modal__outcome-gallery { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .experience-modal__outcome-cards { grid-template-columns: 1fr; } }
 .experience-modal__confidential { display: flex; margin-top: 32px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding: 16px 24px; justify-content: flex-start; align-items: flex-start; gap: 10px; align-self: stretch; background: #F2F2F2; color: #000; font-family: Alata, Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: 150%; text-align: left; }
 .experience-modal__confidential a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 @media (min-width: 768px) and (max-width: 1599px) { .desktop-window { width: 70vw; } }

@@ -50,7 +50,11 @@ export const projects: readonly Project[] = [
       },
       {
         "header": "The challenge",
-        "content": "The problem extended beyond visual inconsistency:\n\n- Different pages used conflicting interaction patterns.\n- The live product, design system and working files did not always match.\n- Designers sometimes created local components without checking the shared library.\n- Page designs were distributed across files and difficult to locate.\n- Business analysts, engineers and testers needed an always available reference when a designer could not be reached.\n- No formal design checkpoint prevented design-to-build differences from reaching stakeholders.\n\nA product wide audit found more than 25 components, with approximately seven requiring correction or restructuring. Search was a representative example: four different patterns existed across the product, with inconsistent icons and helper text behaviour."
+        "content": "After talking with the stakeholders and team members, the problem seems extended beyond visual inconsistency:\n\n- The live product, design system and working files did not always match.\n- Previous designers sometimes created local components without checking the shared library.\n- Page designs were distributed across files and difficult to locate.\n- Business analysts, engineers and testers needed an always available reference when a designer could not be reached.\n- A product wide audit found more than 25 components, with approximately seven requiring correction or restructuring. Search was a representative example: 3 different patterns existed across the product, with inconsistent icons and helper text behaviour."
+      },
+      {
+        "header": "The problem statement",
+        "content": "How might we create a consistent, reliable design system and workflow that keeps design, development, and documentation aligned across the product?"
       },
       {
         "header": "My approach",
@@ -58,11 +62,11 @@ export const projects: readonly Project[] = [
       },
       {
         "header": "Outcome",
-        "content": "- The updated component library reached 100% adoption within the design team.\n- After formal design review was introduced, no further design-to-build misalignment was reported during the observed delivery period.\n- The shared system and page library gave designers, analysts, engineers and testers a faster route to current guidance.\n- Reusable component properties noticeably improved design efficiency, although formal time-on-task data was not collected.\n- Components and designs were reviewed for accessibility and responsive behaviour."
+        "content": "The updated component library achieved 100% adoption across the design team, while formal reviews resulted in zero reported design to build misalignments during the observed delivery period. The shared system gave designers, analysts, engineers, and testers faster access to current guidance and reusable properties improved design efficiency."
       },
       {
-        "header": "Reflection",
-        "content": "The work established a governance model around the design system, connecting reusable components and discoverable guidance to a required design review. This made consistency part of the delivery process instead of relying on individual designers to catch discrepancies."
+        "header": "What I learned",
+        "content": "At first, the task seemed straightforward: use an existing design system as a reference and build one for our product. But research revealed that several pain points were connected, and the real problem extended beyond the design system itself. The solution needed to address the wider issues behind it. As the scope grew, I shared the findings and proposed actions with stakeholders. They understood the broader challenge and supported the plan. The work ultimately required 40% more effort than expected, but it led to a more complete and effective outcome."
       },
     ],
     confidential: true,
