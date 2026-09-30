@@ -105,7 +105,7 @@ export const projects: readonly Project[] = [
         "content": "I independently completed the end to end research and design for print/export.\n\nThe existing vertical PDF layout omitted images, displayed incomplete content and created poor information hierarchy. I recruited ten potential participants, but only three responded, which highlighted the importance of recruitment framing and subject line clarity.\n\nBased on the research, I:\n\n- Changed the export from portrait to landscape.\n- Reorganised the information hierarchy for print use.\n- Restored missing images and incomplete content.\n- Designed and validated the complete output independently.\n\nThe solution was released. Later qualitative feedback indicated that the previous formatting problems were no longer being reported, although I had moved to another project before the follow-up study."
       },
       {
-        "header": "Reflection",
+        "header": "What I learned",
         "content": "My strongest contribution was noticing a repeated user behaviour and translating it into a feasible product direction. In future, I would formally compare the proposed pattern with the existing approach before presenting it, so the decision is supported by both observation and explicit comparative evidence."
       }
     ],
@@ -200,12 +200,12 @@ export const projects: readonly Project[] = [
     title: "Customer Data Analysis & Feasibility",
     folderTitle: "Customer Analysis",
     folderArtwork: { src: "/projects/customer-data-analysis-drawing.svg", alt: "Customer Analysis drawing" },
-    summary: "A six-week feasibility study exploring a customer management and self-service portal.",
+    summary: "A six week feasibility study exploring customer patterns through data analysis.",
     hero: {
       src: "/projects/customer-data-analysis-editorial.svg",
       alt: "Customer Data Analysis project hero",
     },
-    tags: ["Customer Analysis", "Data Analysis", "Customer Segmentation"],
+    tags: ["Customer Analysis", "Customer Segmentation", "Cross-timezone Collaboration"],
     metadata: [
       { label: "Company", value: "Rio Tinto" },
       { label: "Role", value: "Digital graduate product designer" },
@@ -214,19 +214,23 @@ export const projects: readonly Project[] = [
     story: [
       {
         "header": "Overview",
-        "content": "The commercial team wanted to determine whether customers needed a central platform for relationship management and self service. The proposed capability would allow customers to view current product prices, track shipments and access invoices.\n\nUseful customer and segmentation data already existed, but it was spread across source files and could not be compared or queried consistently."
+        "content": "Rio Tinto’s commercial team in the US was receiving recurring customer feedback about several parts of the service experience. To understand whether EDI (Electronic Data Interchange) could address those needs, I analysed available customer data to identify behavioural patterns and assess where digital integration might support stronger customer relationships.\n\n**The objective:** Collate and organise internal customer research and map findings to segmentation via a matrix. Collate data in a spreadsheet ready to query and expose gaps to address. Remedying the gaps in research will require a research plan moving forward. This research plan should be scalable to other product groups and geographic locations to get a holistic understanding of customers’ needs.\n\n**The challenge:** The commercial team had identified customer pain points, but the available information was spread across account and product data. We needed a more structured way to understand how customers differed and where the business could focus its attention.\n\n**My role:** I organised and analysed the customer data, explored potential customer segments, and prepared a playback to help stakeholders understand the patterns and opportunities. I also considered what additional information would strengthen the customer picture."
       },
       {
         "header": "My approach",
-        "content": "I worked with the product manager and lead designer to define the decision the feasibility study needed to support. I used AI to help draft the data analysis plan, then reviewed, cleaned and structured the supplied data into a reusable customer matrix.\n\nThe analysis covered 131 customer records and used:\n\n- Data cleaning and field normalisation\n- Descriptive statistics\n- Frequency and distribution analysis\n- Group-level averages\n- Segment comparison across volume, product mix, margin and relationship indicators\n- Missing-data and evidence-gap analysis\n- Anomaly review before interpretation\n\nI separated the outputs into three layers: what the data showed, what could reasonably be inferred, and what still required further evidence."
+        "content": "I structured the available customer data and compared patterns across customer types, products, commercial performance, and internal assessments. I then developed three working segments to make differences across the customer base easier to explore."
       },
       {
-        "header": "Findings and outcome",
-        "content": "The analysis exposed meaningful differences between customer segments while also showing that behavioural, demographic and engagement information was insufficient for a complete segmentation.\n\nThe business received:\n\n- A structured view of 131 customers\n- A repeatable customer comparison matrix\n- An evidence based playback of the major patterns\n- A prioritised list of missing information\n- Recommendations for segment specific engagement and future research\n\nThe work supported the feasibility discussion and clarified where deeper customer research should focus. No revenue or post launch impact is claimed because the study was decision support, not product delivery."
+        "header": "Findings",
+        "content": "The analysis revealed meaningful variation across customer groups. Some groups represented a greater share of activity, while others showed different patterns in the internal assessments. These findings gave stakeholders a clearer framework for discussing customer priorities and where more tailored engagement could be explored.\n\nThe segments were based on the data available for the study, so I presented them as working groups to guide discussion—not as validated customer personas."
       },
       {
-        "header": "Reflection",
-        "content": "The value of quantitative analysis comes from making its limitations visible. Missing values and inconsistent definitions were not problems to hide, they were findings that directly affected confidence in the business decision."
+        "header": "Outcome",
+        "content": "I turned a broad customer dataset into a structured view that stakeholders could use to discuss customer groups and commercial opportunities. The work also surfaced where the picture was incomplete, including gaps in geographic, behavioural, and direct customer feedback data.\n\nThat distinction helped frame the analysis responsibly: it could guide prioritisation using the information available, while highlighting where further customer research would be needed to validate needs and strengthen the segments."
+      },
+      {
+        "header": "What I learned",
+        "content": ""
       }
     ],
     confidential: true,
